@@ -1,165 +1,69 @@
+aid: azure-dev-ops
 name: Azure DevOps APIs
-description: Azure DevOps provides developer services for support teams to plan work, collaborate on code development, and build and deploy applications.
-url: https://dev.azure.com
+description: >-
+  Azure DevOps provides developer services for support teams to plan work,
+  collaborate on code development, and build and deploy applications through
+  a comprehensive set of REST APIs covering builds, releases, Git, pipelines,
+  work items, test management, and artifacts.
 type: Index
-image: https://azure.microsoft.com/svghandler/devops/
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 tags:
-- DevOps
-- CI/CD
-- Version Control
-- Project Management
-- Azure
-created: '2024'
-modified: '2024'
-apis:
-- name: Azure DevOps REST API
-  description: REST API for Azure DevOps Services and Azure DevOps Server
-  image: https://azure.microsoft.com/svghandler/devops/
-  humanURL: https://learn.microsoft.com/en-us/rest/api/azure/devops/
-  baseURL: https://dev.azure.com/{organization}
-  version: '7.1'
-  tags:
-  - REST
   - DevOps
   - CI/CD
-  properties:
+  - Version Control
+  - Project Management
+  - Azure
+url: >-
+  https://raw.githubusercontent.com/api-evangelist/azure-dev-ops/refs/heads/main/apis.yml
+created: '2024-01-01'
+modified: '2026-03-16'
+specificationVersion: '0.19'
+apis:
+  - aid: azure-dev-ops:azure-devops-rest-api
+    name: Azure DevOps REST API
+    description: REST API for Azure DevOps Services and Azure DevOps Server.
+    humanURL: https://learn.microsoft.com/en-us/rest/api/azure/devops/
+    baseURL: https://dev.azure.com/{organization}
+    tags:
+      - REST
+      - DevOps
+      - CI/CD
+    properties:
+      - type: Documentation
+        url: https://learn.microsoft.com/en-us/rest/api/azure/devops/
+      - type: Authentication
+        url: https://learn.microsoft.com/en-us/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate
+  - aid: azure-dev-ops:azure-devops-pipelines-api
+    name: Azure DevOps Pipelines API
+    description: API for managing CI/CD pipelines, runs, and pipeline resources.
+    humanURL: https://learn.microsoft.com/en-us/rest/api/azure/devops/pipelines/
+    baseURL: https://dev.azure.com/{organization}/{project}/_apis/pipelines
+    tags:
+      - Pipelines
+      - CI/CD
+      - Automation
+    properties:
+      - type: Documentation
+        url: https://learn.microsoft.com/en-us/rest/api/azure/devops/pipelines/
+common:
+  - type: Portal
+    url: https://dev.azure.com/
   - type: Documentation
-    url: https://learn.microsoft.com/en-us/rest/api/azure/devops/
-  - type: OpenAPI
-    url: https://learn.microsoft.com/en-us/rest/api/azure/devops/
+    url: https://learn.microsoft.com/en-us/azure/devops/
+  - type: Getting Started
+    url: https://learn.microsoft.com/en-us/azure/devops/
   - type: Authentication
     url: https://learn.microsoft.com/en-us/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate
-- name: Azure DevOps Build API
-  description: API for managing build definitions, queuing builds, and retrieving build results
-  humanURL: https://learn.microsoft.com/en-us/rest/api/azure/devops/build/
-  baseURL: https://dev.azure.com/{organization}/{project}/_apis/build
-  version: '7.1'
-  tags:
-  - Build
-  - CI
-  - Continuous Integration
-  properties:
-  - type: Documentation
-    url: https://learn.microsoft.com/en-us/rest/api/azure/devops/build/
-  - type: Builds
-    url: https://learn.microsoft.com/en-us/rest/api/azure/devops/build/builds
-  - type: Definitions
-    url: https://learn.microsoft.com/en-us/rest/api/azure/devops/build/definitions
-- name: Azure DevOps Git Repositories API
-  description: API for managing Git repositories, branches, pull requests, and commits
-  humanURL: https://learn.microsoft.com/en-us/rest/api/azure/devops/git/
-  baseURL: https://dev.azure.com/{organization}/{project}/_apis/git
-  version: '7.1'
-  tags:
-  - Git
-  - Source Control
-  - Version Control
-  - Repositories
-  properties:
-  - type: Documentation
-    url: https://learn.microsoft.com/en-us/rest/api/azure/devops/git/
-  - type: Repositories
-    url: https://learn.microsoft.com/en-us/rest/api/azure/devops/git/repositories
-  - type: Pull Requests
-    url: https://learn.microsoft.com/en-us/rest/api/azure/devops/git/pull-requests
-- name: Azure DevOps Pipelines API
-  description: API for managing CI/CD pipelines, runs, and pipeline resources
-  humanURL: https://learn.microsoft.com/en-us/rest/api/azure/devops/pipelines/
-  baseURL: https://dev.azure.com/{organization}/{project}/_apis/pipelines
-  version: '7.1'
-  tags:
-  - Pipelines
-  - CI/CD
-  - Automation
-  properties:
-  - type: Documentation
-    url: https://learn.microsoft.com/en-us/rest/api/azure/devops/pipelines/
-  - type: Pipelines
-    url: https://learn.microsoft.com/en-us/rest/api/azure/devops/pipelines/pipelines
-  - type: Runs
-    url: https://learn.microsoft.com/en-us/rest/api/azure/devops/pipelines/runs
-- name: Azure DevOps Work Item Tracking API
-  description: API for creating, updating, and querying work items, queries, and boards
-  humanURL: https://learn.microsoft.com/en-us/rest/api/azure/devops/wit/
-  baseURL: https://dev.azure.com/{organization}/{project}/_apis/wit
-  version: '7.1'
-  tags:
-  - Work Items
-  - Project Management
-  - Agile
-  - Tracking
-  properties:
-  - type: Documentation
-    url: https://learn.microsoft.com/en-us/rest/api/azure/devops/wit/
-  - type: Work Items
-    url: https://learn.microsoft.com/en-us/rest/api/azure/devops/wit/work-items
-  - type: Queries
-    url: https://learn.microsoft.com/en-us/rest/api/azure/devops/wit/queries
-- name: Azure DevOps Release Management API
-  description: API for managing release definitions, deployments, and release pipelines
-  humanURL: https://learn.microsoft.com/en-us/rest/api/azure/devops/release/
-  baseURL: https://vsrm.dev.azure.com/{organization}/{project}/_apis/release
-  version: '7.1'
-  tags:
-  - Release
-  - CD
-  - Continuous Deployment
-  - Deployment
-  properties:
-  - type: Documentation
-    url: https://learn.microsoft.com/en-us/rest/api/azure/devops/release/
-  - type: Releases
-    url: https://learn.microsoft.com/en-us/rest/api/azure/devops/release/releases
-  - type: Definitions
-    url: https://learn.microsoft.com/en-us/rest/api/azure/devops/release/definitions
-- name: Azure DevOps Test Management API
-  description: API for managing test plans, test suites, test cases, and test runs
-  humanURL: https://learn.microsoft.com/en-us/rest/api/azure/devops/test/
-  baseURL: https://dev.azure.com/{organization}/{project}/_apis/test
-  version: '7.1'
-  tags:
-  - Testing
-  - Test Management
-  - Quality Assurance
-  properties:
-  - type: Documentation
-    url: https://learn.microsoft.com/en-us/rest/api/azure/devops/test/
-  - type: Test Plans
-    url: https://learn.microsoft.com/en-us/rest/api/azure/devops/testplan/
-  - type: Test Results
-    url: https://learn.microsoft.com/en-us/rest/api/azure/devops/test/results
-- name: Azure DevOps Artifacts API
-  description: API for managing package feeds, packages, and artifact versions
-  humanURL: https://learn.microsoft.com/en-us/rest/api/azure/devops/artifacts/
-  baseURL: https://feeds.dev.azure.com/{organization}/{project}/_apis/packaging
-  version: '7.1'
-  tags:
-  - Artifacts
-  - Packages
-  - Feeds
-  - NuGet
-  - npm
-  properties:
-  - type: Documentation
-    url: https://learn.microsoft.com/en-us/rest/api/azure/devops/artifacts/
-  - type: Feeds
-    url: https://learn.microsoft.com/en-us/rest/api/azure/devops/artifacts/feed-management
-common:
-- type: Getting Started
-  url: https://learn.microsoft.com/en-us/azure/devops/
-- type: Authentication
-  url: https://learn.microsoft.com/en-us/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate
-- type: Rate Limits
-  url: https://learn.microsoft.com/en-us/azure/devops/integrate/concepts/rate-limits
-- type: Status
-  url: https://status.dev.azure.com/
-- type: Support
-  url: https://azure.microsoft.com/en-us/support/devops/
-- type: Pricing
-  url: https://azure.microsoft.com/en-us/pricing/details/devops/azure-devops-services/
-- type: Blog
-  url: https://devblogs.microsoft.com/devops/
+  - type: Status
+    url: https://status.dev.azure.com/
+  - type: Support
+    url: https://azure.microsoft.com/en-us/support/devops/
+  - type: Blog
+    url: https://devblogs.microsoft.com/devops/
+  - type: Terms of Service
+    url: https://azure.microsoft.com/en-us/support/legal/
+  - type: Privacy Policy
+    url: https://privacy.microsoft.com/en-us/privacystatement
 maintainers:
-- name: Microsoft Azure DevOps Team
-  email: azuredevops@microsoft.com
-  url: https://azure.microsoft.com/en-us/products/devops/
+  - FN: Kin Lane
+    email: kin@apievangelist.com
