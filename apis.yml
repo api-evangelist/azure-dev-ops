@@ -8,11 +8,11 @@ description: >-
 type: Index
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 tags:
-  - DevOps
-  - CI/CD
-  - Version Control
-  - Project Management
   - Azure
+  - CI/CD
+  - DevOps
+  - Project Management
+  - Version Control
 url: >-
   https://raw.githubusercontent.com/api-evangelist/azure-dev-ops/refs/heads/main/apis.yml
 created: '2024-01-01'
@@ -25,9 +25,9 @@ apis:
     humanURL: https://learn.microsoft.com/en-us/rest/api/azure/devops/
     baseURL: https://dev.azure.com/{organization}
     tags:
-      - REST
-      - DevOps
       - CI/CD
+      - DevOps
+      - REST
     properties:
       - type: Documentation
         url: https://learn.microsoft.com/en-us/rest/api/azure/devops/
@@ -39,9 +39,9 @@ apis:
     humanURL: https://learn.microsoft.com/en-us/rest/api/azure/devops/pipelines/
     baseURL: https://dev.azure.com/{organization}/{project}/_apis/pipelines
     tags:
-      - Pipelines
-      - CI/CD
       - Automation
+      - CI/CD
+      - Pipelines
     properties:
       - type: Documentation
         url: https://learn.microsoft.com/en-us/rest/api/azure/devops/pipelines/
