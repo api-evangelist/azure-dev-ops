@@ -1,0 +1,168 @@
+naftiko: "1.0.0-alpha1"
+
+info:
+  label: "Azure DevOps"
+  description: "Azure DevOps REST API for Azure resource management."
+  tags:
+    - Azure
+    - Cloud
+  created: "2026-04-19"
+  modified: "2026-04-19"
+
+binds:
+  - namespace: env
+    keys:
+      AZURE_SUBSCRIPTION_ID: AZURE_SUBSCRIPTION_ID
+      AZURE_ACCESS_TOKEN: AZURE_ACCESS_TOKEN
+
+capability:
+  consumes:
+    - type: http
+      namespace: azure-dev-ops
+      baseUri: https://management.azure.com
+      description: "Azure DevOps REST API"
+      authentication:
+        type: bearer
+        token: "{{AZURE_ACCESS_TOKEN}}"
+      resources:
+        - name: pipeline
+          path: /subscriptions/{subscriptionId}/providers/Microsoft.Pipeline/Pipelines
+          description: "Manage Pipeline resources"
+          operations:
+            - name: list-pipelines
+              method: GET
+              description: "List all Pipeline resources"
+              inputParameters:
+                - name: subscriptionId
+                  in: path
+                  type: string
+                  required: true
+                  description: "Azure subscription ID"
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+        - name: project
+          path: /subscriptions/{subscriptionId}/providers/Microsoft.Project/Projects
+          description: "Manage Project resources"
+          operations:
+            - name: list-projects
+              method: GET
+              description: "List all Project resources"
+              inputParameters:
+                - name: subscriptionId
+                  in: path
+                  type: string
+                  required: true
+                  description: "Azure subscription ID"
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+        - name: organization
+          path: /subscriptions/{subscriptionId}/providers/Microsoft.Organization/Organizations
+          description: "Manage Organization resources"
+          operations:
+            - name: list-organizations
+              method: GET
+              description: "List all Organization resources"
+              inputParameters:
+                - name: subscriptionId
+                  in: path
+                  type: string
+                  required: true
+                  description: "Azure subscription ID"
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+        - name: repository
+          path: /subscriptions/{subscriptionId}/providers/Microsoft.Repository/Repositorys
+          description: "Manage Repository resources"
+          operations:
+            - name: list-repositorys
+              method: GET
+              description: "List all Repository resources"
+              inputParameters:
+                - name: subscriptionId
+                  in: path
+                  type: string
+                  required: true
+                  description: "Azure subscription ID"
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+
+  exposes:
+    - type: rest
+      port: 8193
+      namespace: azure-dev-ops-api
+      resources:
+        - path: /v1/resources
+          name: resources
+          description: "Resource management"
+          operations:
+            - method: GET
+              name: list-resources
+              description: "List resources"
+              call: "azure-dev-ops.list-pipelines"
+              with:
+                subscriptionId: "rest.subscriptionId"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+
+    - type: mcp
+      port: 9193
+      namespace: azure-dev-ops-mcp
+      transport: http
+      tools:
+        - name: list-pipelines
+          description: "List Pipeline resources in Azure"
+          hints:
+            readOnly: true
+            openWorld: true
+          call: "azure-dev-ops.list-pipelines"
+          with:
+            subscriptionId: "tools.subscriptionId"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: list-projects
+          description: "List Project resources in Azure"
+          hints:
+            readOnly: true
+            openWorld: true
+          call: "azure-dev-ops.list-projects"
+          with:
+            subscriptionId: "tools.subscriptionId"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: list-organizations
+          description: "List Organization resources in Azure"
+          hints:
+            readOnly: true
+            openWorld: true
+          call: "azure-dev-ops.list-organizations"
+          with:
+            subscriptionId: "tools.subscriptionId"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: list-repositorys
+          description: "List Repository resources in Azure"
+          hints:
+            readOnly: true
+            openWorld: true
+          call: "azure-dev-ops.list-repositorys"
+          with:
+            subscriptionId: "tools.subscriptionId"
+          outputParameters:
+            - type: object
+              mapping: "$."

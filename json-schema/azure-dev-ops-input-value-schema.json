@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/azure-dev-ops/refs/heads/main/json-schema/azure-dev-ops-input-value-schema.json",
+  "title": "InputValue",
+  "description": "Representation of a pipeline template input parameter value.",
+  "type": "object",
+  "properties": {
+    "displayValue": {
+      "description": "Description of the input parameter value.",
+      "type": "string"
+    },
+    "value": {
+      "description": "Value of an input parameter.",
+      "type": "string"
+    }
+  }
+}

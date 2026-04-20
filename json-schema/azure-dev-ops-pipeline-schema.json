@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/azure-dev-ops/refs/heads/main/json-schema/azure-dev-ops-pipeline-schema.json",
+  "title": "Pipeline",
+  "description": "Azure DevOps Pipeline used to configure Continuous Integration (CI) & Continuous Delivery (CD) for Azure resources.",
+  "type": "object",
+  "properties": {
+    "properties": {
+      "$ref": "#/definitions/PipelineProperties",
+      "description": "Custom properties of the Pipeline.",
+      "x-ms-client-flatten": true
+    }
+  },
+  "required": [
+    "properties"
+  ]
+}

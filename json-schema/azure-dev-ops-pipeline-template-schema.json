@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/azure-dev-ops/refs/heads/main/json-schema/azure-dev-ops-pipeline-template-schema.json",
+  "title": "PipelineTemplate",
+  "description": "Template used to bootstrap the pipeline.",
+  "type": "object",
+  "properties": {
+    "id": {
+      "description": "Unique identifier of the pipeline template.",
+      "type": "string"
+    },
+    "parameters": {
+      "additionalProperties": {
+        "type": "string"
+      },
+      "description": "Dictionary of input parameters used in the pipeline template.",
+      "type": "object"
+    }
+  },
+  "required": [
+    "id"
+  ]
+}

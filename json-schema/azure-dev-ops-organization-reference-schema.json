@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/azure-dev-ops/refs/heads/main/json-schema/azure-dev-ops-organization-reference-schema.json",
+  "title": "OrganizationReference",
+  "description": "Reference to an Azure DevOps Organization.",
+  "type": "object",
+  "properties": {
+    "id": {
+      "description": "Unique immutable identifier for the Azure DevOps Organization.",
+      "readOnly": true,
+      "type": "string"
+    },
+    "name": {
+      "description": "Name of the Azure DevOps Organization.",
+      "type": "string"
+    }
+  },
+  "required": [
+    "name"
+  ]
+}

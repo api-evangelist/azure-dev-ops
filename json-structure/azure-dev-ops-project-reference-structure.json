@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/azure-dev-ops/refs/heads/main/json-structure/azure-dev-ops-project-reference-structure.json",
+  "description": "Reference to an Azure DevOps Project.",
+  "type": "object",
+  "properties": {
+    "id": {
+      "description": "Unique immutable identifier of the Azure DevOps Project.",
+      "readOnly": true,
+      "type": "string"
+    },
+    "name": {
+      "description": "Name of the Azure DevOps Project.",
+      "type": "string"
+    }
+  },
+  "required": [
+    "name"
+  ],
+  "name": "ProjectReference"
+}

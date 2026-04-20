@@ -1,0 +1,93 @@
+naftiko: "1.0.0-alpha1"
+
+info:
+  label: "Azure DevOps Management"
+  description: "Workflow capability for managing Azure DevOps resources. Used by cloud engineers and DevOps teams."
+  tags:
+    - Azure
+    - Cloud
+    - Management
+  created: "2026-04-19"
+  modified: "2026-04-19"
+
+binds:
+  - namespace: env
+    keys:
+      AZURE_SUBSCRIPTION_ID: AZURE_SUBSCRIPTION_ID
+      AZURE_ACCESS_TOKEN: AZURE_ACCESS_TOKEN
+
+capability:
+  consumes:
+    - import: azure-dev-ops
+      location: ./shared/azure-dev-ops.yaml
+
+  exposes:
+    - type: rest
+      port: 8083
+      namespace: azure-dev-ops-management-api
+      description: "Unified REST API for Azure DevOps management."
+      resources:
+        - path: /v1/resources
+          name: resources
+          description: "Resource management"
+          operations:
+            - method: GET
+              name: list
+              description: "List all resources"
+              call: "azure-dev-ops.list-pipelines"
+              with:
+                subscriptionId: "rest.subscriptionId"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+
+    - type: mcp
+      port: 9093
+      namespace: azure-dev-ops-management-mcp
+      transport: http
+      description: "MCP server for AI-assisted Azure DevOps management."
+      tools:
+        - name: list-pipelines
+          description: "List Pipeline resources"
+          hints:
+            readOnly: true
+            openWorld: true
+          call: "azure-dev-ops.list-pipelines"
+          with:
+            subscriptionId: "tools.subscriptionId"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: list-projects
+          description: "List Project resources"
+          hints:
+            readOnly: true
+            openWorld: true
+          call: "azure-dev-ops.list-projects"
+          with:
+            subscriptionId: "tools.subscriptionId"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: list-organizations
+          description: "List Organization resources"
+          hints:
+            readOnly: true
+            openWorld: true
+          call: "azure-dev-ops.list-organizations"
+          with:
+            subscriptionId: "tools.subscriptionId"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: list-repositorys
+          description: "List Repository resources"
+          hints:
+            readOnly: true
+            openWorld: true
+          call: "azure-dev-ops.list-repositorys"
+          with:
+            subscriptionId: "tools.subscriptionId"
+          outputParameters:
+            - type: object
+              mapping: "$."

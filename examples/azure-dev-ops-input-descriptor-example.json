@@ -1,0 +1,8 @@
+{
+  "description": "example-string",
+  "id": "example-string",
+  "possibleValues": [
+    {}
+  ],
+  "type": "String"
+}

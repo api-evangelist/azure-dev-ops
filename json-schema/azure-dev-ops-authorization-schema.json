@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/azure-dev-ops/refs/heads/main/json-schema/azure-dev-ops-authorization-schema.json",
+  "title": "Authorization",
+  "description": "Authorization info used to access a resource (like code repository).",
+  "type": "object",
+  "properties": {
+    "authorizationType": {
+      "description": "Type of authorization.",
+      "enum": [
+        "personalAccessToken"
+      ],
+      "type": "string",
+      "x-ms-enum": {
+        "modelAsString": true,
+        "name": "AuthorizationType"
+      }
+    },
+    "parameters": {
+      "additionalProperties": {
+        "type": "string"
+      },
+      "description": "Authorization parameters corresponding to the authorization type.",
+      "type": "object"
+    }
+  },
+  "required": [
+    "authorizationType"
+  ]
+}

@@ -1,0 +1,120 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "azuredevops": "https://azure.microsoft.com/azure-dev-ops/schema/",
+    "schema": "https://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "Authorization": "azuredevops:Authorization",
+    "BootstrapConfiguration": "azuredevops:BootstrapConfiguration",
+    "CodeRepository": "azuredevops:CodeRepository",
+    "InputDescriptor": "azuredevops:InputDescriptor",
+    "InputValue": "azuredevops:InputValue",
+    "OperationDisplayValue": "azuredevops:OperationDisplayValue",
+    "OrganizationReference": "azuredevops:OrganizationReference",
+    "Pipeline": "azuredevops:Pipeline",
+    "PipelineListResult": "azuredevops:PipelineListResult",
+    "PipelineProperties": "azuredevops:PipelineProperties",
+    "PipelineTemplate": "azuredevops:PipelineTemplate",
+    "PipelineTemplateDefinition": "azuredevops:PipelineTemplateDefinition",
+    "PipelineTemplateDefinitionListResult": "azuredevops:PipelineTemplateDefinitionListResult",
+    "PipelineUpdateParameters": "azuredevops:PipelineUpdateParameters",
+    "ProjectReference": "azuredevops:ProjectReference",
+    "authorizationType": {
+      "@id": "azuredevops:authorizationType",
+      "@type": "xsd:string"
+    },
+    "parameters": {
+      "@id": "azuredevops:parameters",
+      "@type": "@id"
+    },
+    "repository": {
+      "@id": "azuredevops:repository",
+      "@type": "xsd:string"
+    },
+    "template": {
+      "@id": "azuredevops:template",
+      "@type": "xsd:string"
+    },
+    "authorization": {
+      "@id": "azuredevops:authorization",
+      "@type": "xsd:string"
+    },
+    "defaultBranch": {
+      "@id": "azuredevops:defaultBranch",
+      "@type": "xsd:string"
+    },
+    "id": {
+      "@id": "azuredevops:id",
+      "@type": "xsd:string"
+    },
+    "properties": {
+      "@id": "azuredevops:properties",
+      "@type": "@id"
+    },
+    "repositoryType": {
+      "@id": "azuredevops:repositoryType",
+      "@type": "xsd:string"
+    },
+    "description": "schema:description",
+    "possibleValues": {
+      "@id": "azuredevops:possibleValues",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "type": {
+      "@id": "azuredevops:type",
+      "@type": "xsd:string"
+    },
+    "displayValue": {
+      "@id": "azuredevops:displayValue",
+      "@type": "xsd:string"
+    },
+    "value": {
+      "@id": "azuredevops:value",
+      "@type": "xsd:string"
+    },
+    "operation": {
+      "@id": "azuredevops:operation",
+      "@type": "xsd:string"
+    },
+    "provider": {
+      "@id": "azuredevops:provider",
+      "@type": "xsd:string"
+    },
+    "resource": {
+      "@id": "azuredevops:resource",
+      "@type": "xsd:string"
+    },
+    "name": "schema:name",
+    "nextLink": {
+      "@id": "azuredevops:nextLink",
+      "@type": "xsd:string"
+    },
+    "bootstrapConfiguration": {
+      "@id": "azuredevops:bootstrapConfiguration",
+      "@type": "xsd:string"
+    },
+    "organization": {
+      "@id": "azuredevops:organization",
+      "@type": "xsd:string"
+    },
+    "pipelineId": {
+      "@id": "azuredevops:pipelineId",
+      "@type": "xsd:integer"
+    },
+    "project": {
+      "@id": "azuredevops:project",
+      "@type": "xsd:string"
+    },
+    "inputs": {
+      "@id": "azuredevops:inputs",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "tags": {
+      "@id": "azuredevops:tags",
+      "@type": "@id"
+    }
+  }
+}

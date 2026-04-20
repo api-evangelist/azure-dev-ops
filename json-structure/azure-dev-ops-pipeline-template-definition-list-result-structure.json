@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/azure-dev-ops/refs/heads/main/json-structure/azure-dev-ops-pipeline-template-definition-list-result-structure.json",
+  "description": "Result of a request to list all pipeline template definitions.",
+  "type": "object",
+  "properties": {
+    "nextLink": {
+      "description": "The URL to get the next set of pipeline template definitions, if there are any.",
+      "type": "string"
+    },
+    "value": {
+      "description": "List of pipeline template definitions.",
+      "items": {
+        "$ref": "#/definitions/PipelineTemplateDefinition"
+      },
+      "type": "array"
+    }
+  },
+  "name": "PipelineTemplateDefinitionListResult"
+}

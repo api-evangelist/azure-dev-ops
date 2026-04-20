@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/azure-dev-ops/refs/heads/main/json-structure/azure-dev-ops-pipeline-template-definition-structure.json",
+  "description": "Definition of a pipeline template.",
+  "type": "object",
+  "properties": {
+    "description": {
+      "description": "Description of the pipeline enabled by the template.",
+      "type": "string"
+    },
+    "id": {
+      "description": "Unique identifier of the pipeline template.",
+      "type": "string"
+    },
+    "inputs": {
+      "description": "List of input parameters required by the template to create a pipeline.",
+      "items": {
+        "$ref": "#/definitions/InputDescriptor"
+      },
+      "type": "array"
+    }
+  },
+  "required": [
+    "id"
+  ],
+  "name": "PipelineTemplateDefinition"
+}

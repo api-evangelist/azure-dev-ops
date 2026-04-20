@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/azure-dev-ops/refs/heads/main/json-structure/azure-dev-ops-operation-display-value-structure.json",
+  "description": "Display information of an operation.",
+  "properties": {
+    "description": {
+      "description": "Friendly description of the operation.",
+      "readOnly": true,
+      "type": "string"
+    },
+    "operation": {
+      "description": "Friendly name of the operation.",
+      "readOnly": true,
+      "type": "string"
+    },
+    "provider": {
+      "description": "Friendly name of the resource provider.",
+      "readOnly": true,
+      "type": "string"
+    },
+    "resource": {
+      "description": "Friendly name of the resource type the operation applies to.",
+      "readOnly": true,
+      "type": "string"
+    }
+  },
+  "type": "object",
+  "name": "OperationDisplayValue"
+}

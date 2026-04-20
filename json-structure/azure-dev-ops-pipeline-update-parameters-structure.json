@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/azure-dev-ops/refs/heads/main/json-structure/azure-dev-ops-pipeline-update-parameters-structure.json",
+  "description": "Request payload used to update an existing Azure Pipeline.",
+  "type": "object",
+  "properties": {
+    "tags": {
+      "additionalProperties": {
+        "type": "string"
+      },
+      "description": "Dictionary of key-value pairs to be set as tags on the Azure Pipeline. This will overwrite any existing tags.",
+      "type": "object"
+    }
+  },
+  "name": "PipelineUpdateParameters"
+}

@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/azure-dev-ops/refs/heads/main/json-structure/azure-dev-ops-pipeline-list-result-structure.json",
+  "description": "Result of a request to list all Azure Pipelines under a given scope.",
+  "properties": {
+    "nextLink": {
+      "description": "URL to get the next set of Pipelines, if there are any.",
+      "type": "string"
+    },
+    "value": {
+      "description": "List of pipelines.",
+      "items": {
+        "$ref": "#/definitions/Pipeline"
+      },
+      "type": "array"
+    }
+  },
+  "type": "object",
+  "name": "PipelineListResult"
+}

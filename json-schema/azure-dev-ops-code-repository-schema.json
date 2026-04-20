@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/azure-dev-ops/refs/heads/main/json-schema/azure-dev-ops-code-repository-schema.json",
+  "title": "CodeRepository",
+  "description": "Repository containing the source code for a pipeline.",
+  "type": "object",
+  "properties": {
+    "authorization": {
+      "$ref": "#/definitions/Authorization",
+      "description": "Authorization info to access the code repository."
+    },
+    "defaultBranch": {
+      "description": "Default branch used to configure Continuous Integration (CI) in the pipeline.",
+      "type": "string"
+    },
+    "id": {
+      "description": "Unique immutable identifier of the code repository.",
+      "type": "string"
+    },
+    "properties": {
+      "additionalProperties": {
+        "type": "string"
+      },
+      "description": "Repository-specific properties.",
+      "type": "object",
+      "x-ms-client-flatten": true
+    },
+    "repositoryType": {
+      "description": "Type of code repository.",
+      "enum": [
+        "gitHub",
+        "vstsGit"
+      ],
+      "type": "string",
+      "x-ms-enum": {
+        "modelAsString": true,
+        "name": "CodeRepositoryType"
+      }
+    }
+  },
+  "required": [
+    "repositoryType",
+    "id",
+    "defaultBranch"
+  ]
+}

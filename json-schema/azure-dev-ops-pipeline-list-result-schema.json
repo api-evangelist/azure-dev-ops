@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/azure-dev-ops/refs/heads/main/json-schema/azure-dev-ops-pipeline-list-result-schema.json",
+  "title": "PipelineListResult",
+  "description": "Result of a request to list all Azure Pipelines under a given scope.",
+  "properties": {
+    "nextLink": {
+      "description": "URL to get the next set of Pipelines, if there are any.",
+      "type": "string"
+    },
+    "value": {
+      "description": "List of pipelines.",
+      "items": {
+        "$ref": "#/definitions/Pipeline"
+      },
+      "type": "array"
+    }
+  },
+  "type": "object"
+}

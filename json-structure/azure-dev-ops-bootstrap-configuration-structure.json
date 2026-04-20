@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/azure-dev-ops/refs/heads/main/json-structure/azure-dev-ops-bootstrap-configuration-structure.json",
+  "description": "Configuration used to bootstrap a Pipeline.",
+  "type": "object",
+  "properties": {
+    "repository": {
+      "$ref": "#/definitions/CodeRepository",
+      "description": "Repository containing the source code for the pipeline."
+    },
+    "template": {
+      "$ref": "#/definitions/PipelineTemplate",
+      "description": "Template used to bootstrap the pipeline."
+    }
+  },
+  "required": [
+    "template"
+  ],
+  "name": "BootstrapConfiguration"
+}

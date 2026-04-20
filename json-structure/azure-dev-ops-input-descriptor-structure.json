@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/azure-dev-ops/refs/heads/main/json-structure/azure-dev-ops-input-descriptor-structure.json",
+  "description": "Representation of a pipeline template input parameter.",
+  "type": "object",
+  "properties": {
+    "description": {
+      "description": "Description of the input parameter.",
+      "type": "string"
+    },
+    "id": {
+      "description": "Identifier of the input parameter.",
+      "type": "string"
+    },
+    "possibleValues": {
+      "description": "List of possible values for the input parameter.",
+      "items": {
+        "$ref": "#/definitions/InputValue"
+      },
+      "type": "array"
+    },
+    "type": {
+      "description": "Data type of the value of the input parameter.",
+      "enum": [
+        "String",
+        "SecureString",
+        "Int",
+        "Bool",
+        "Authorization"
+      ],
+      "type": "string",
+      "x-ms-enum": {
+        "modelAsString": true,
+        "name": "InputDataType"
+      }
+    }
+  },
+  "required": [
+    "id",
+    "type"
+  ],
+  "name": "InputDescriptor"
+}

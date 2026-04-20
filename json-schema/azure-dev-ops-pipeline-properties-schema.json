@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/azure-dev-ops/refs/heads/main/json-schema/azure-dev-ops-pipeline-properties-schema.json",
+  "title": "PipelineProperties",
+  "description": "Custom properties of a Pipeline.",
+  "type": "object",
+  "properties": {
+    "bootstrapConfiguration": {
+      "$ref": "#/definitions/BootstrapConfiguration",
+      "description": "Configuration used to bootstrap the Pipeline."
+    },
+    "organization": {
+      "$ref": "#/definitions/OrganizationReference",
+      "description": "Reference to the Azure DevOps Organization containing the Pipeline."
+    },
+    "pipelineId": {
+      "description": "Unique identifier of the Azure Pipeline within the Azure DevOps Project.",
+      "readOnly": true,
+      "type": "integer"
+    },
+    "project": {
+      "$ref": "#/definitions/ProjectReference",
+      "description": "Reference to the Azure DevOps Project containing the Pipeline."
+    }
+  },
+  "required": [
+    "organization",
+    "project",
+    "bootstrapConfiguration"
+  ]
+}
