@@ -54,19 +54,19 @@ common:
   url: https://dev.azure.com/
 - type: Documentation
   url: https://learn.microsoft.com/en-us/azure/devops/
-- type: Getting Started
+- type: GettingStarted
   url: https://learn.microsoft.com/en-us/azure/devops/
 - type: Authentication
   url: https://learn.microsoft.com/en-us/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate
-- type: Status
+- type: StatusPage
   url: https://status.dev.azure.com/
 - type: Support
   url: https://azure.microsoft.com/en-us/support/devops/
 - type: Blog
   url: https://devblogs.microsoft.com/devops/
-- type: Terms of Service
+- type: TermsOfService
   url: https://azure.microsoft.com/en-us/support/legal/
-- type: Privacy Policy
+- type: PrivacyPolicy
   url: https://privacy.microsoft.com/en-us/privacystatement
 - type: SpectralRules
   url: https://raw.githubusercontent.com/api-evangelist/azure-dev-ops/refs/heads/main/rules/azure-dev-ops-spectral-rules.yml
