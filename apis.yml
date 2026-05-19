@@ -50,6 +50,8 @@ apis:
   - type: OpenAPI
     url: https://raw.githubusercontent.com/api-evangelist/azure-dev-ops/refs/heads/main/openapi/azure-dev-ops-openapi.yaml
 common:
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/microsoft-azure-devops
 - type: Portal
   url: https://dev.azure.com/
 - type: Documentation

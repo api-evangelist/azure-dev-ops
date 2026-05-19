@@ -1,0 +1,67 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Azure DevOps — PipelineTemplateDefinitions
+  description: 'Azure DevOps — PipelineTemplateDefinitions. 1 operations. Lead operation: Azure DevOps Pipeline Template Definitions_
+    List. Self-contained Naftiko capability covering one Azure Dev Ops business surface.'
+  tags:
+  - Azure Dev Ops
+  - PipelineTemplateDefinitions
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    AZURE_DEV_OPS_API_KEY: AZURE_DEV_OPS_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: azure-dev-ops-pipelinetemplatedefinitions
+    baseUri: https://management.azure.com
+    description: Azure DevOps — PipelineTemplateDefinitions business capability. Self-contained, no shared references.
+    resources:
+    - name: providers-Microsoft.DevOps-pipelineTemplateDefinitions
+      path: /providers/Microsoft.DevOps/pipelineTemplateDefinitions
+      operations:
+      - name: pipelinetemplatedefinitionslist
+        method: GET
+        description: Azure DevOps Pipeline Template Definitions_ List
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+  exposes:
+  - type: rest
+    namespace: azure-dev-ops-pipelinetemplatedefinitions-rest
+    port: 8080
+    description: REST adapter for Azure DevOps — PipelineTemplateDefinitions. One Spectral-compliant resource per consumed
+      operation, prefixed with /v1.
+    resources:
+    - path: /v1/providers/microsoft-devops/pipelinetemplatedefinitions
+      name: providers-microsoft-devops-pipelinetemplatedefinitions
+      description: REST surface for providers-Microsoft.DevOps-pipelineTemplateDefinitions.
+      operations:
+      - method: GET
+        name: pipelinetemplatedefinitionslist
+        description: Azure DevOps Pipeline Template Definitions_ List
+        call: azure-dev-ops-pipelinetemplatedefinitions.pipelinetemplatedefinitionslist
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: azure-dev-ops-pipelinetemplatedefinitions-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Azure DevOps — PipelineTemplateDefinitions. One tool per consumed operation, routed inline
+      through this capability's consumes block.
+    tools:
+    - name: azure-devops-pipeline-template-definitions
+      description: Azure DevOps Pipeline Template Definitions_ List
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: azure-dev-ops-pipelinetemplatedefinitions.pipelinetemplatedefinitionslist
+      outputParameters:
+      - type: object
+        mapping: $.
