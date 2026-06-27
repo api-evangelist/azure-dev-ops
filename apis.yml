@@ -76,9 +76,9 @@ common:
     url: https://raw.githubusercontent.com/api-evangelist/azure-dev-ops/refs/heads/main/vocabulary/azure-dev-ops-vocabulary.yaml
   - type: JSONLD
     url: https://raw.githubusercontent.com/api-evangelist/azure-dev-ops/refs/heads/main/json-ld/azure-dev-ops-context.jsonld
-  - type: NaftikoCapability
+  - type: X-NaftikoCapability
     url: https://raw.githubusercontent.com/api-evangelist/azure-dev-ops/refs/heads/main/capabilities/azure-dev-ops-management.yaml
-  - type: NaftikoCapability
+  - type: X-NaftikoCapability
     url: https://raw.githubusercontent.com/api-evangelist/azure-dev-ops/refs/heads/main/capabilities/shared/azure-dev-ops.yaml
 maintainers:
   - FN: Kin Lane
