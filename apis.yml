@@ -50,6 +50,10 @@ apis:
     - type: OpenAPI
       url: https://raw.githubusercontent.com/api-evangelist/azure-dev-ops/refs/heads/main/openapi/azure-dev-ops-openapi.yaml
 common:
+  - type: DomainSecurity
+    url: security/azure-dev-ops-domain-security.yml
+  - type: Authentication
+    url: authentication/azure-dev-ops-authentication.yml
   - type: OAuthScopes
     url: scopes/azure-dev-ops-scopes.yml
   - type: LinkedIn
