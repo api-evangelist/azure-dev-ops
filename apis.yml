@@ -50,6 +50,8 @@ apis:
     - type: OpenAPI
       url: https://raw.githubusercontent.com/api-evangelist/azure-dev-ops/refs/heads/main/openapi/azure-dev-ops-openapi.yaml
 common:
+  - type: AgenticAccess
+    url: agentic-access/azure-dev-ops-agentic-access.yml
   - type: DomainSecurity
     url: security/azure-dev-ops-domain-security.yml
   - type: Authentication
