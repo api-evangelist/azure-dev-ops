@@ -1,0 +1,186 @@
+swagger: '2.0'
+info:
+  description: Azure DevOps Resource Provider
+  title: Azure DevOps Operations API
+  version: 2019-07-01-preview
+  x-apisguru-categories:
+  - cloud
+  x-logo:
+    url: https://api.apis.guru/v2/cache/logo/https_assets.onestore.ms_cdnfiles_onestorerolling-1606-01000_shell_v3_images_logo_microsoft.png
+  x-ms-code-generation-settings:
+    name: DevOpsClient
+  x-origin:
+  - format: swagger
+    url: https://raw.githubusercontent.com/Azure/azure-rest-api-specs/master/specification/devops/resource-manager/Microsoft.DevOps/preview/2019-07-01-preview/devops.json
+    version: '2.0'
+  x-providerName: azure.com
+  x-serviceName: devops
+  x-tags:
+  - Azure
+  - Microsoft
+host: management.azure.com
+schemes:
+- https
+consumes:
+- application/json
+produces:
+- application/json
+security:
+- azure_auth:
+  - user_impersonation
+tags:
+- name: Operations
+paths:
+  /providers/Microsoft.DevOps/operations:
+    get:
+      description: Lists all the operations supported by Microsoft.DevOps resource provider.
+      operationId: Operations_List
+      parameters:
+      - $ref: '#/parameters/ApiVersionParameter'
+      responses:
+        '200':
+          description: The list of supported operations has been fetched successfully.
+          schema:
+            $ref: '#/definitions/OperationListResult'
+        default:
+          description: Error response describing why the operation failed.
+          schema:
+            $ref: '#/definitions/CloudError'
+      tags:
+      - Operations
+      x-ms-examples:
+        Get a list of operations supported by Microsoft.DevOps resource provider:
+          parameters:
+            api-version: 2019-07-01-preview
+          responses:
+            '200':
+              body:
+                value:
+                - display:
+                    description: Registers the specified subscription with Microsoft.DevOps resource provider and enables the creation of Pipelines
+                    operation: Register for Microsoft.DevOps
+                    provider: Microsoft DevOps
+                    resource: register
+                  isDataAction: 'false'
+                  name: Microsoft.DevOps/register/action
+                - display:
+                    description: Creates or Updates any Pipeline
+                    operation: Create or Update Pipeline
+                    provider: Microsoft DevOps
+                    resource: Pipelines
+                  isDataAction: 'false'
+                  name: Microsoft.DevOps/pipelines/write
+                - display:
+                    description: Reads any Pipeline
+                    operation: Read Pipeline
+                    provider: Microsoft DevOps
+                    resource: Pipelines
+                  isDataAction: 'false'
+                  name: Microsoft.DevOps/pipelines/read
+                - display:
+                    description: Deletes any Pipeline
+                    operation: Delete Pipeline
+                    provider: Microsoft DevOps
+                    resource: Pipelines
+                  isDataAction: 'false'
+                  name: Microsoft.DevOps/pipelines/delete
+                - display:
+                    description: Reads any PipelineTemplateDefinition
+                    operation: Read PipelineTemplateDefinition
+                    provider: Microsoft DevOps
+                    resource: PipelineTemplateDefinitions
+                  isDataAction: 'false'
+                  name: Microsoft.DevOps/pipelineTemplateDefinitions/read
+              description: The list of supported operations has been fetched successfully.
+      x-ms-pageable:
+        nextLinkName: nextLink
+      summary: Azure DevOps Operations_ List
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+definitions:
+  Operation:
+    description: Properties of an Operation.
+    properties:
+      display:
+        $ref: '#/definitions/OperationDisplayValue'
+        description: Display information of the operation.
+        x-ms-client-flatten: true
+      isDataAction:
+        description: Indicates whether the operation applies to data-plane.
+        type: string
+      name:
+        description: Name of the operation.
+        readOnly: true
+        type: string
+  OperationDisplayValue:
+    description: Display information of an operation.
+    properties:
+      description:
+        description: Friendly description of the operation.
+        readOnly: true
+        type: string
+      operation:
+        description: Friendly name of the operation.
+        readOnly: true
+        type: string
+      provider:
+        description: Friendly name of the resource provider.
+        readOnly: true
+        type: string
+      resource:
+        description: Friendly name of the resource type the operation applies to.
+        readOnly: true
+        type: string
+  CloudError:
+    description: An error response from the Pipelines Resource Provider.
+    properties:
+      error:
+        $ref: '#/definitions/CloudErrorBody'
+        description: Details of the error from the Pipelines Resource Provider.
+    x-ms-external: true
+  OperationListResult:
+    description: Result of a request to list all operations supported by Microsoft.DevOps resource provider.
+    properties:
+      nextLink:
+        description: The URL to get the next set of operations, if there are any.
+        type: string
+      value:
+        description: List of operations supported by Microsoft.DevOps resource provider.
+        items:
+          $ref: '#/definitions/Operation'
+        readOnly: true
+        type: array
+  CloudErrorBody:
+    description: An error response from the Pipelines Resource Provider.
+    properties:
+      code:
+        description: An identifier for the error. Codes are invariant and are intended to be consumed programmatically.
+        type: string
+      details:
+        description: A list of additional details about the error.
+        items:
+          $ref: '#/definitions/CloudErrorBody'
+        type: array
+      message:
+        description: A message describing the error, intended to be suitable for display in a user interface.
+        type: string
+      target:
+        description: The target of the particular error. For example, the name of the property in error or the method where the error occurred.
+        type: string
+    x-ms-external: true
+parameters:
+  ApiVersionParameter:
+    description: API version to be used with the HTTP request.
+    in: query
+    name: api-version
+    required: true
+    type: string
+securityDefinitions:
+  azure_auth:
+    authorizationUrl: https://login.microsoftonline.com/common/oauth2/authorize
+    description: Azure Active Directory OAuth2 Flow
+    flow: implicit
+    scopes:
+      user_impersonation: impersonate your user account
+    type: oauth2
