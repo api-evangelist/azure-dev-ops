@@ -6,7 +6,20 @@ description: >-
   a comprehensive set of REST APIs covering builds, releases, Git, pipelines,
   work items, test management, and artifacts.
 type: Index
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: freemium
+  onboarding: self-serve
+  trial: false
+  try_now: true
+  public: false
+  label: Freemium · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/azure-dev-ops.png
 tags:
   - Azure
   - CI/CD
@@ -19,37 +32,61 @@ created: '2024-01-01'
 modified: '2026-04-19'
 specificationVersion: '0.19'
 apis:
-  - aid: azure-dev-ops:azure-devops-rest-api
-    name: Azure DevOps REST API
-    description: REST API for Azure DevOps Services and Azure DevOps Server.
-    humanURL: https://learn.microsoft.com/en-us/rest/api/azure/devops/
-    baseURL: https://dev.azure.com/{organization}
-    tags:
-    - CI/CD
-    - DevOps
-    - REST
-    properties:
-    - type: Documentation
-      url: https://learn.microsoft.com/en-us/rest/api/azure/devops/
-    - type: Authentication
-      url: https://learn.microsoft.com/en-us/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate
-    - type: OpenAPI
-      url: https://raw.githubusercontent.com/api-evangelist/azure-dev-ops/refs/heads/main/openapi/azure-dev-ops-openapi.yaml
-  - aid: azure-dev-ops:azure-devops-pipelines-api
-    name: Azure DevOps Pipelines API
-    description: API for managing CI/CD pipelines, runs, and pipeline resources.
-    humanURL: https://learn.microsoft.com/en-us/rest/api/azure/devops/pipelines/
-    baseURL: https://dev.azure.com/{organization}/{project}/_apis/pipelines
-    tags:
-    - Automation
-    - CI/CD
-    - Pipelines
-    properties:
-    - type: Documentation
-      url: https://learn.microsoft.com/en-us/rest/api/azure/devops/pipelines/
-    - type: OpenAPI
-      url: https://raw.githubusercontent.com/api-evangelist/azure-dev-ops/refs/heads/main/openapi/azure-dev-ops-openapi.yaml
+- aid: azure-dev-ops:azure-dev-ops-operations-api
+  name: Azure DevOps Operations API
+  description: The Operations API from Azure DevOps — 1 operation(s) for operations.
+  humanURL: https://learn.microsoft.com/en-us/rest/api/azure/devops/
+  baseURL: https://dev.azure.com/{organization}
+  tags:
+  - Operations
+  properties:
+  - type: OpenAPI
+    url: openapi/azure-dev-ops-operations-api-openapi.yml
+  - type: Documentation
+    url: https://learn.microsoft.com/en-us/rest/api/azure/devops/
+  - type: Authentication
+    url: >-
+      https://learn.microsoft.com/en-us/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate
+  - type: Documentation
+    url: https://learn.microsoft.com/en-us/rest/api/azure/devops/pipelines/
+- aid: azure-dev-ops:azure-dev-ops-pipelines-api
+  name: Azure DevOps Pipelines API
+  description: The Pipelines API from Azure DevOps — 3 operation(s) for pipelines.
+  humanURL: https://learn.microsoft.com/en-us/rest/api/azure/devops/
+  baseURL: https://dev.azure.com/{organization}
+  tags:
+  - Pipelines
+  properties:
+  - type: OpenAPI
+    url: openapi/azure-dev-ops-pipelines-api-openapi.yml
+  - type: Documentation
+    url: https://learn.microsoft.com/en-us/rest/api/azure/devops/
+  - type: Authentication
+    url: >-
+      https://learn.microsoft.com/en-us/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate
+  - type: Documentation
+    url: https://learn.microsoft.com/en-us/rest/api/azure/devops/pipelines/
+- aid: azure-dev-ops:azure-dev-ops-pipelinetemplatedefinitions-api
+  name: Azure DevOps PipelineTemplateDefinitions API
+  description: >-
+    The PipelineTemplateDefinitions API from Azure DevOps — 1 operation(s) for pipelinetemplatedefinitions.
+  humanURL: https://learn.microsoft.com/en-us/rest/api/azure/devops/
+  baseURL: https://dev.azure.com/{organization}
+  tags:
+  - PipelineTemplateDefinitions
+  properties:
+  - type: OpenAPI
+    url: openapi/azure-dev-ops-pipelinetemplatedefinitions-api-openapi.yml
+  - type: Documentation
+    url: https://learn.microsoft.com/en-us/rest/api/azure/devops/
+  - type: Authentication
+    url: >-
+      https://learn.microsoft.com/en-us/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate
+  - type: Documentation
+    url: https://learn.microsoft.com/en-us/rest/api/azure/devops/pipelines/
 common:
+  - type: PostmanWorkspace
+    url: https://www.postman.com/kinlaneapi/azure-devops/overview
   - type: AgenticAccess
     url: agentic-access/azure-dev-ops-agentic-access.yml
   - type: DomainSecurity
