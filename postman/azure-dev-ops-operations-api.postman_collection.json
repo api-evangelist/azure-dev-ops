@@ -1,0 +1,209 @@
+{
+  "info": {
+    "_postman_id": "f29d27c9-18fb-416c-8d01-29ee96e95620",
+    "name": "Azure DevOps Operations API",
+    "description": "Azure DevOps Resource Provider",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T10:53:05.000Z",
+    "updatedAt": "2026-07-28T10:53:06.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-f29d27c9-18fb-416c-8d01-29ee96e95620"
+  },
+  "item": [
+    {
+      "name": "providers",
+      "item": [
+        {
+          "name": "Microsoft.DevOps",
+          "item": [
+            {
+              "name": "operations",
+              "item": [
+                {
+                  "name": "Azure DevOps Operations_ List",
+                  "id": "67c823f2-f477-4348-9415-928a3ef2e0ec",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/providers/Microsoft.DevOps/operations?api-version=<string>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "providers",
+                        "Microsoft.DevOps",
+                        "operations"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) API version to be used with the HTTP request.",
+                          "key": "api-version",
+                          "value": "<string>"
+                        }
+                      ]
+                    },
+                    "description": "Lists all the operations supported by Microsoft.DevOps resource provider."
+                  },
+                  "response": [
+                    {
+                      "id": "da7bade2-234a-433e-b1b4-6a128159f3dd",
+                      "name": "The list of supported operations has been fetched successfully.",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/providers/Microsoft.DevOps/operations?api-version=<string>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "providers",
+                            "Microsoft.DevOps",
+                            "operations"
+                          ],
+                          "query": [
+                            {
+                              "description": "(Required) API version to be used with the HTTP request.",
+                              "key": "api-version",
+                              "value": "<string>"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"nextLink\": \"<string>\",\n  \"value\": [\n    {\n      \"display\": {\n        \"description\": \"<string>\",\n        \"operation\": \"<string>\",\n        \"provider\": \"<string>\",\n        \"resource\": \"<string>\"\n      },\n      \"isDataAction\": \"<string>\",\n      \"name\": \"<string>\"\n    },\n    {\n      \"display\": {\n        \"description\": \"<string>\",\n        \"operation\": \"<string>\",\n        \"provider\": \"<string>\",\n        \"resource\": \"<string>\"\n      },\n      \"isDataAction\": \"<string>\",\n      \"name\": \"<string>\"\n    }\n  ]\n}",
+                      "createdAt": "2026-07-28T10:53:06.000Z",
+                      "updatedAt": "2026-07-28T10:53:06.000Z",
+                      "uid": "35240-da7bade2-234a-433e-b1b4-6a128159f3dd"
+                    },
+                    {
+                      "id": "90c5e2ea-0fe1-4139-98ab-4766acddcd66",
+                      "name": "Error response describing why the operation failed.",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/providers/Microsoft.DevOps/operations?api-version=<string>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "providers",
+                            "Microsoft.DevOps",
+                            "operations"
+                          ],
+                          "query": [
+                            {
+                              "description": "(Required) API version to be used with the HTTP request.",
+                              "key": "api-version",
+                              "value": "<string>"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Internal Server Error",
+                      "code": 500,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"error\": {\n    \"code\": \"<string>\",\n    \"details\": [\n      {\n        \"value\": \"<Circular reference to #/components/schemas/CloudErrorBody detected>\"\n      },\n      {\n        \"value\": \"<Circular reference to #/components/schemas/CloudErrorBody detected>\"\n      }\n    ],\n    \"message\": \"<string>\",\n    \"target\": \"<string>\"\n  }\n}",
+                      "createdAt": "2026-07-28T10:53:06.000Z",
+                      "updatedAt": "2026-07-28T10:53:06.000Z",
+                      "uid": "35240-90c5e2ea-0fe1-4139-98ab-4766acddcd66"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T10:53:06.000Z",
+                  "updatedAt": "2026-07-28T10:53:06.000Z",
+                  "uid": "35240-67c823f2-f477-4348-9415-928a3ef2e0ec"
+                }
+              ],
+              "id": "763e268e-8823-4f19-9378-655b62f0bf4b",
+              "createdAt": "2026-07-28T10:53:06.000Z",
+              "updatedAt": "2026-07-28T10:53:06.000Z",
+              "uid": "35240-763e268e-8823-4f19-9378-655b62f0bf4b"
+            }
+          ],
+          "id": "6aaf4394-7515-4d3a-a931-cee5b2c39da7",
+          "createdAt": "2026-07-28T10:53:06.000Z",
+          "updatedAt": "2026-07-28T10:53:06.000Z",
+          "uid": "35240-6aaf4394-7515-4d3a-a931-cee5b2c39da7"
+        }
+      ],
+      "id": "618a9940-2ecf-4535-aeea-6cfb72d41e89",
+      "createdAt": "2026-07-28T10:53:06.000Z",
+      "updatedAt": "2026-07-28T10:53:06.000Z",
+      "uid": "35240-618a9940-2ecf-4535-aeea-6cfb72d41e89"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "user_impersonation",
+        "type": "string"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://login.microsoftonline.com/common/oauth2/authorize",
+        "type": "string"
+      },
+      {
+        "key": "grant_type",
+        "value": "implicit",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://management.azure.com"
+    }
+  ]
+}

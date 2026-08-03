@@ -1,0 +1,18 @@
+{
+  "provider": "azure-dev-ops",
+  "sources": [
+    "azure-dev-ops-operations-api-openapi.yml",
+    "azure-dev-ops-pipelines-api-openapi.yml",
+    "azure-dev-ops-pipelinetemplatedefinitions-api-openapi.yml"
+  ],
+  "outputs": [
+    "azure-dev-ops-operations-api-openapi.yml",
+    "azure-dev-ops-pipelines-api-openapi.yml",
+    "azure-dev-ops-pipelinetemplatedefinitions-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

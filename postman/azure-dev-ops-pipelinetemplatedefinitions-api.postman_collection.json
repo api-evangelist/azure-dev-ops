@@ -1,0 +1,209 @@
+{
+  "info": {
+    "_postman_id": "f759e2ed-a8e3-4a58-967f-678644b6b231",
+    "name": "Azure DevOps Operations PipelineTemplateDefinitions API",
+    "description": "Azure DevOps Resource Provider",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T10:53:08.000Z",
+    "updatedAt": "2026-07-28T10:53:08.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-f759e2ed-a8e3-4a58-967f-678644b6b231"
+  },
+  "item": [
+    {
+      "name": "providers",
+      "item": [
+        {
+          "name": "Microsoft.DevOps",
+          "item": [
+            {
+              "name": "pipelineTemplateDefinitions",
+              "item": [
+                {
+                  "name": "Azure DevOps Pipeline Template Definitions_ List",
+                  "id": "c60ea742-3ca8-4494-a302-dc4d12bd7feb",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/providers/Microsoft.DevOps/pipelineTemplateDefinitions?api-version=<string>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "providers",
+                        "Microsoft.DevOps",
+                        "pipelineTemplateDefinitions"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) API version to be used with the HTTP request.",
+                          "key": "api-version",
+                          "value": "<string>"
+                        }
+                      ]
+                    },
+                    "description": "Lists all pipeline templates which can be used to configure an Azure Pipeline."
+                  },
+                  "response": [
+                    {
+                      "id": "a385ef26-079e-4698-b00e-49013672922a",
+                      "name": "The pipeline template definitions have been fetched successfully.",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/providers/Microsoft.DevOps/pipelineTemplateDefinitions?api-version=<string>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "providers",
+                            "Microsoft.DevOps",
+                            "pipelineTemplateDefinitions"
+                          ],
+                          "query": [
+                            {
+                              "description": "(Required) API version to be used with the HTTP request.",
+                              "key": "api-version",
+                              "value": "<string>"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"nextLink\": \"<string>\",\n  \"value\": [\n    {\n      \"id\": \"<string>\",\n      \"description\": \"<string>\",\n      \"inputs\": [\n        {\n          \"id\": \"<string>\",\n          \"type\": \"SecureString\",\n          \"description\": \"<string>\",\n          \"possibleValues\": [\n            {\n              \"displayValue\": \"<string>\",\n              \"value\": \"<string>\"\n            },\n            {\n              \"displayValue\": \"<string>\",\n              \"value\": \"<string>\"\n            }\n          ]\n        },\n        {\n          \"id\": \"<string>\",\n          \"type\": \"String\",\n          \"description\": \"<string>\",\n          \"possibleValues\": [\n            {\n              \"displayValue\": \"<string>\",\n              \"value\": \"<string>\"\n            },\n            {\n              \"displayValue\": \"<string>\",\n              \"value\": \"<string>\"\n            }\n          ]\n        }\n      ]\n    },\n    {\n      \"id\": \"<string>\",\n      \"description\": \"<string>\",\n      \"inputs\": [\n        {\n          \"id\": \"<string>\",\n          \"type\": \"SecureString\",\n          \"description\": \"<string>\",\n          \"possibleValues\": [\n            {\n              \"displayValue\": \"<string>\",\n              \"value\": \"<string>\"\n            },\n            {\n              \"displayValue\": \"<string>\",\n              \"value\": \"<string>\"\n            }\n          ]\n        },\n        {\n          \"id\": \"<string>\",\n          \"type\": \"String\",\n          \"description\": \"<string>\",\n          \"possibleValues\": [\n            {\n              \"displayValue\": \"<string>\",\n              \"value\": \"<string>\"\n            },\n            {\n              \"displayValue\": \"<string>\",\n              \"value\": \"<string>\"\n            }\n          ]\n        }\n      ]\n    }\n  ]\n}",
+                      "createdAt": "2026-07-28T10:53:08.000Z",
+                      "updatedAt": "2026-07-28T10:53:08.000Z",
+                      "uid": "35240-a385ef26-079e-4698-b00e-49013672922a"
+                    },
+                    {
+                      "id": "eb3eb60e-c149-4dcc-a470-50ea041d0c60",
+                      "name": "Error response describing why the operation failed.",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/providers/Microsoft.DevOps/pipelineTemplateDefinitions?api-version=<string>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "providers",
+                            "Microsoft.DevOps",
+                            "pipelineTemplateDefinitions"
+                          ],
+                          "query": [
+                            {
+                              "description": "(Required) API version to be used with the HTTP request.",
+                              "key": "api-version",
+                              "value": "<string>"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Internal Server Error",
+                      "code": 500,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"error\": {\n    \"code\": \"<string>\",\n    \"details\": [\n      {\n        \"value\": \"<Circular reference to #/components/schemas/CloudErrorBody detected>\"\n      },\n      {\n        \"value\": \"<Circular reference to #/components/schemas/CloudErrorBody detected>\"\n      }\n    ],\n    \"message\": \"<string>\",\n    \"target\": \"<string>\"\n  }\n}",
+                      "createdAt": "2026-07-28T10:53:08.000Z",
+                      "updatedAt": "2026-07-28T10:53:08.000Z",
+                      "uid": "35240-eb3eb60e-c149-4dcc-a470-50ea041d0c60"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T10:53:08.000Z",
+                  "updatedAt": "2026-07-28T10:53:08.000Z",
+                  "uid": "35240-c60ea742-3ca8-4494-a302-dc4d12bd7feb"
+                }
+              ],
+              "id": "7aec2db7-034d-4428-b4a2-bdcb0e4e0020",
+              "createdAt": "2026-07-28T10:53:08.000Z",
+              "updatedAt": "2026-07-28T10:53:08.000Z",
+              "uid": "35240-7aec2db7-034d-4428-b4a2-bdcb0e4e0020"
+            }
+          ],
+          "id": "57e3d641-7d9d-4771-8268-e64d02cd56d5",
+          "createdAt": "2026-07-28T10:53:08.000Z",
+          "updatedAt": "2026-07-28T10:53:08.000Z",
+          "uid": "35240-57e3d641-7d9d-4771-8268-e64d02cd56d5"
+        }
+      ],
+      "id": "805e4844-4916-4fa6-82f9-35ab87c86ed1",
+      "createdAt": "2026-07-28T10:53:08.000Z",
+      "updatedAt": "2026-07-28T10:53:08.000Z",
+      "uid": "35240-805e4844-4916-4fa6-82f9-35ab87c86ed1"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "user_impersonation",
+        "type": "string"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://login.microsoftonline.com/common/oauth2/authorize",
+        "type": "string"
+      },
+      {
+        "key": "grant_type",
+        "value": "implicit",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://management.azure.com"
+    }
+  ]
+}

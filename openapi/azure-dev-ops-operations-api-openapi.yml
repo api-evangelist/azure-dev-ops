@@ -2,7 +2,7 @@ swagger: '2.0'
 info:
   description: Azure DevOps Resource Provider
   title: Azure DevOps Operations API
-  version: 2019-07-01-preview
+  version: '2.0'
   x-apisguru-categories:
   - cloud
   x-logo:
@@ -12,7 +12,6 @@ info:
   x-origin:
   - format: swagger
     url: https://raw.githubusercontent.com/Azure/azure-rest-api-specs/master/specification/devops/resource-manager/Microsoft.DevOps/preview/2019-07-01-preview/devops.json
-    version: '2.0'
   x-providerName: azure.com
   x-serviceName: devops
   x-tags:

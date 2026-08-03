@@ -1,0 +1,1490 @@
+{
+  "info": {
+    "_postman_id": "d65dceb8-2045-4c88-8a20-f4fdf0102ee8",
+    "name": "Azure DevOps Operations Pipelines API",
+    "description": "Azure DevOps Resource Provider",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T10:53:06.000Z",
+    "updatedAt": "2026-07-28T10:53:07.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-d65dceb8-2045-4c88-8a20-f4fdf0102ee8"
+  },
+  "item": [
+    {
+      "name": "subscriptions",
+      "item": [
+        {
+          "name": "{subscriptionId}",
+          "item": [
+            {
+              "name": "providers",
+              "item": [
+                {
+                  "name": "Microsoft.DevOps",
+                  "item": [
+                    {
+                      "name": "pipelines",
+                      "item": [
+                        {
+                          "name": "Azure DevOps Pipelines_ List by Subscription",
+                          "id": "a419913f-e8e8-4a35-b42d-d47100839dd7",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/subscriptions/:subscriptionId/providers/Microsoft.DevOps/pipelines?api-version=<string>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "subscriptions",
+                                ":subscriptionId",
+                                "providers",
+                                "Microsoft.DevOps",
+                                "pipelines"
+                              ],
+                              "query": [
+                                {
+                                  "description": "(Required) API version to be used with the HTTP request.",
+                                  "key": "api-version",
+                                  "value": "<string>"
+                                }
+                              ],
+                              "variable": [
+                                {
+                                  "id": "ffa42370-61c1-4c25-aa1f-ef0d9ac82fc1",
+                                  "key": "subscriptionId",
+                                  "value": "<string>",
+                                  "description": "(Required) Unique identifier of the Azure subscription. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000)."
+                                }
+                              ]
+                            },
+                            "description": "Lists all Azure Pipelines under the specified subscription."
+                          },
+                          "response": [
+                            {
+                              "id": "a0d32fd8-520f-4195-839c-c52428f844a5",
+                              "name": "The Azure Pipelines have been fetched successfully.",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/subscriptions/:subscriptionId/providers/Microsoft.DevOps/pipelines?api-version=<string>",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "subscriptions",
+                                    ":subscriptionId",
+                                    "providers",
+                                    "Microsoft.DevOps",
+                                    "pipelines"
+                                  ],
+                                  "query": [
+                                    {
+                                      "description": "(Required) API version to be used with the HTTP request.",
+                                      "key": "api-version",
+                                      "value": "<string>"
+                                    }
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "subscriptionId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"nextLink\": \"<string>\",\n  \"value\": [\n    {\n      \"properties\": {},\n      \"id\": \"<string>\",\n      \"location\": \"<string>\",\n      \"name\": \"<string>\",\n      \"tags\": {\n        \"est_7\": \"<string>\",\n        \"magna_03\": \"<string>\"\n      },\n      \"type\": \"<string>\"\n    },\n    {\n      \"properties\": {},\n      \"id\": \"<string>\",\n      \"location\": \"<string>\",\n      \"name\": \"<string>\",\n      \"tags\": {\n        \"tempor1ab\": \"<string>\",\n        \"anim_6b\": \"<string>\",\n        \"minimc\": \"<string>\"\n      },\n      \"type\": \"<string>\"\n    }\n  ]\n}",
+                              "createdAt": "2026-07-28T10:53:07.000Z",
+                              "updatedAt": "2026-07-28T10:53:07.000Z",
+                              "uid": "35240-a0d32fd8-520f-4195-839c-c52428f844a5"
+                            },
+                            {
+                              "id": "8a40a58e-cf85-4140-bf5b-1811934c6e96",
+                              "name": "Error response describing why the operation failed.",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/subscriptions/:subscriptionId/providers/Microsoft.DevOps/pipelines?api-version=<string>",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "subscriptions",
+                                    ":subscriptionId",
+                                    "providers",
+                                    "Microsoft.DevOps",
+                                    "pipelines"
+                                  ],
+                                  "query": [
+                                    {
+                                      "description": "(Required) API version to be used with the HTTP request.",
+                                      "key": "api-version",
+                                      "value": "<string>"
+                                    }
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "subscriptionId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Internal Server Error",
+                              "code": 500,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"error\": {\n    \"code\": \"<string>\",\n    \"details\": [\n      {\n        \"value\": \"<Circular reference to #/components/schemas/CloudErrorBody detected>\"\n      },\n      {\n        \"value\": \"<Circular reference to #/components/schemas/CloudErrorBody detected>\"\n      }\n    ],\n    \"message\": \"<string>\",\n    \"target\": \"<string>\"\n  }\n}",
+                              "createdAt": "2026-07-28T10:53:07.000Z",
+                              "updatedAt": "2026-07-28T10:53:07.000Z",
+                              "uid": "35240-8a40a58e-cf85-4140-bf5b-1811934c6e96"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T10:53:07.000Z",
+                          "updatedAt": "2026-07-28T10:53:07.000Z",
+                          "uid": "35240-a419913f-e8e8-4a35-b42d-d47100839dd7"
+                        }
+                      ],
+                      "id": "fd3852df-a21f-4c61-a7c2-d48084a3b481",
+                      "createdAt": "2026-07-28T10:53:07.000Z",
+                      "updatedAt": "2026-07-28T10:53:07.000Z",
+                      "uid": "35240-fd3852df-a21f-4c61-a7c2-d48084a3b481"
+                    }
+                  ],
+                  "id": "8dfbf5c7-cb7f-4ab0-ad91-029a51714083",
+                  "createdAt": "2026-07-28T10:53:07.000Z",
+                  "updatedAt": "2026-07-28T10:53:07.000Z",
+                  "uid": "35240-8dfbf5c7-cb7f-4ab0-ad91-029a51714083"
+                }
+              ],
+              "id": "a32ae010-f724-4327-b6a6-98cb62b30975",
+              "createdAt": "2026-07-28T10:53:07.000Z",
+              "updatedAt": "2026-07-28T10:53:07.000Z",
+              "uid": "35240-a32ae010-f724-4327-b6a6-98cb62b30975"
+            },
+            {
+              "name": "resourceGroups",
+              "item": [
+                {
+                  "name": "{resourceGroupName}",
+                  "item": [
+                    {
+                      "name": "providers",
+                      "item": [
+                        {
+                          "name": "Microsoft.DevOps",
+                          "item": [
+                            {
+                              "name": "pipelines",
+                              "item": [
+                                {
+                                  "name": "{pipelineName}",
+                                  "item": [
+                                    {
+                                      "name": "Azure DevOps Pipelines_ Delete",
+                                      "id": "1b82470e-647d-4cfe-a1b6-80e5436cac3f",
+                                      "protocolProfileBehavior": {
+                                        "disableBodyPruning": true
+                                      },
+                                      "request": {
+                                        "method": "DELETE",
+                                        "header": [
+                                          {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                          }
+                                        ],
+                                        "url": {
+                                          "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.DevOps/pipelines/:pipelineName?api-version=<string>",
+                                          "host": [
+                                            "{{baseUrl}}"
+                                          ],
+                                          "path": [
+                                            "subscriptions",
+                                            ":subscriptionId",
+                                            "resourceGroups",
+                                            ":resourceGroupName",
+                                            "providers",
+                                            "Microsoft.DevOps",
+                                            "pipelines",
+                                            ":pipelineName"
+                                          ],
+                                          "query": [
+                                            {
+                                              "description": "(Required) API version to be used with the HTTP request.",
+                                              "key": "api-version",
+                                              "value": "<string>"
+                                            }
+                                          ],
+                                          "variable": [
+                                            {
+                                              "id": "c0ba27cc-c7d0-42f8-9607-6182f758ead3",
+                                              "key": "subscriptionId",
+                                              "value": "<string>",
+                                              "description": "(Required) Unique identifier of the Azure subscription. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000)."
+                                            },
+                                            {
+                                              "id": "ecc91bda-a37e-4ebb-93cc-94723da7672b",
+                                              "key": "resourceGroupName",
+                                              "value": "<string>",
+                                              "description": "(Required) Name of the resource group within the Azure subscription."
+                                            },
+                                            {
+                                              "id": "4d76204d-d548-458e-b1e9-e33e8a776944",
+                                              "key": "pipelineName",
+                                              "value": "<string>",
+                                              "description": "(Required) The name of the Azure Pipeline resource."
+                                            }
+                                          ]
+                                        },
+                                        "description": "Deletes an Azure Pipeline."
+                                      },
+                                      "response": [
+                                        {
+                                          "id": "1fa4db93-4363-40e9-9024-fe3c3eb5da48",
+                                          "name": "The Azure Pipeline has been deleted successfully.",
+                                          "originalRequest": {
+                                            "method": "DELETE",
+                                            "header": [
+                                              {
+                                                "description": "Added as a part of security scheme: oauth2",
+                                                "key": "Authorization",
+                                                "value": "<token>"
+                                              }
+                                            ],
+                                            "url": {
+                                              "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.DevOps/pipelines/:pipelineName?api-version=<string>",
+                                              "host": [
+                                                "{{baseUrl}}"
+                                              ],
+                                              "path": [
+                                                "subscriptions",
+                                                ":subscriptionId",
+                                                "resourceGroups",
+                                                ":resourceGroupName",
+                                                "providers",
+                                                "Microsoft.DevOps",
+                                                "pipelines",
+                                                ":pipelineName"
+                                              ],
+                                              "query": [
+                                                {
+                                                  "description": "(Required) API version to be used with the HTTP request.",
+                                                  "key": "api-version",
+                                                  "value": "<string>"
+                                                }
+                                              ],
+                                              "variable": [
+                                                {
+                                                  "key": "subscriptionId"
+                                                },
+                                                {
+                                                  "key": "resourceGroupName"
+                                                },
+                                                {
+                                                  "key": "pipelineName"
+                                                }
+                                              ]
+                                            }
+                                          },
+                                          "status": "OK",
+                                          "code": 200,
+                                          "_postman_previewlanguage": "text",
+                                          "header": [],
+                                          "cookie": [],
+                                          "responseTime": null,
+                                          "body": null,
+                                          "createdAt": "2026-07-28T10:53:07.000Z",
+                                          "updatedAt": "2026-07-28T10:53:07.000Z",
+                                          "uid": "35240-1fa4db93-4363-40e9-9024-fe3c3eb5da48"
+                                        },
+                                        {
+                                          "id": "fde23e4b-6cfa-47c1-ac4e-cc96ec484dba",
+                                          "name": "The Azure Pipeline is not found or has been deleted already.",
+                                          "originalRequest": {
+                                            "method": "DELETE",
+                                            "header": [
+                                              {
+                                                "description": "Added as a part of security scheme: oauth2",
+                                                "key": "Authorization",
+                                                "value": "<token>"
+                                              }
+                                            ],
+                                            "url": {
+                                              "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.DevOps/pipelines/:pipelineName?api-version=<string>",
+                                              "host": [
+                                                "{{baseUrl}}"
+                                              ],
+                                              "path": [
+                                                "subscriptions",
+                                                ":subscriptionId",
+                                                "resourceGroups",
+                                                ":resourceGroupName",
+                                                "providers",
+                                                "Microsoft.DevOps",
+                                                "pipelines",
+                                                ":pipelineName"
+                                              ],
+                                              "query": [
+                                                {
+                                                  "description": "(Required) API version to be used with the HTTP request.",
+                                                  "key": "api-version",
+                                                  "value": "<string>"
+                                                }
+                                              ],
+                                              "variable": [
+                                                {
+                                                  "key": "subscriptionId"
+                                                },
+                                                {
+                                                  "key": "resourceGroupName"
+                                                },
+                                                {
+                                                  "key": "pipelineName"
+                                                }
+                                              ]
+                                            }
+                                          },
+                                          "status": "No Content",
+                                          "code": 204,
+                                          "_postman_previewlanguage": "text",
+                                          "header": [],
+                                          "cookie": [],
+                                          "responseTime": null,
+                                          "body": null,
+                                          "createdAt": "2026-07-28T10:53:07.000Z",
+                                          "updatedAt": "2026-07-28T10:53:07.000Z",
+                                          "uid": "35240-fde23e4b-6cfa-47c1-ac4e-cc96ec484dba"
+                                        },
+                                        {
+                                          "id": "661b0577-3110-4070-b860-c75c4e8d0fef",
+                                          "name": "Error response describing why the operation failed.",
+                                          "originalRequest": {
+                                            "method": "DELETE",
+                                            "header": [
+                                              {
+                                                "key": "Accept",
+                                                "value": "application/json"
+                                              },
+                                              {
+                                                "description": "Added as a part of security scheme: oauth2",
+                                                "key": "Authorization",
+                                                "value": "<token>"
+                                              }
+                                            ],
+                                            "url": {
+                                              "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.DevOps/pipelines/:pipelineName?api-version=<string>",
+                                              "host": [
+                                                "{{baseUrl}}"
+                                              ],
+                                              "path": [
+                                                "subscriptions",
+                                                ":subscriptionId",
+                                                "resourceGroups",
+                                                ":resourceGroupName",
+                                                "providers",
+                                                "Microsoft.DevOps",
+                                                "pipelines",
+                                                ":pipelineName"
+                                              ],
+                                              "query": [
+                                                {
+                                                  "description": "(Required) API version to be used with the HTTP request.",
+                                                  "key": "api-version",
+                                                  "value": "<string>"
+                                                }
+                                              ],
+                                              "variable": [
+                                                {
+                                                  "key": "subscriptionId"
+                                                },
+                                                {
+                                                  "key": "resourceGroupName"
+                                                },
+                                                {
+                                                  "key": "pipelineName"
+                                                }
+                                              ]
+                                            }
+                                          },
+                                          "status": "Internal Server Error",
+                                          "code": 500,
+                                          "_postman_previewlanguage": "json",
+                                          "header": [
+                                            {
+                                              "key": "Content-Type",
+                                              "value": "application/json"
+                                            }
+                                          ],
+                                          "cookie": [],
+                                          "responseTime": null,
+                                          "body": "{\n  \"error\": {\n    \"code\": \"<string>\",\n    \"details\": [\n      {\n        \"value\": \"<Circular reference to #/components/schemas/CloudErrorBody detected>\"\n      },\n      {\n        \"value\": \"<Circular reference to #/components/schemas/CloudErrorBody detected>\"\n      }\n    ],\n    \"message\": \"<string>\",\n    \"target\": \"<string>\"\n  }\n}",
+                                          "createdAt": "2026-07-28T10:53:07.000Z",
+                                          "updatedAt": "2026-07-28T10:53:07.000Z",
+                                          "uid": "35240-661b0577-3110-4070-b860-c75c4e8d0fef"
+                                        }
+                                      ],
+                                      "createdAt": "2026-07-28T10:53:07.000Z",
+                                      "updatedAt": "2026-07-28T10:53:07.000Z",
+                                      "uid": "35240-1b82470e-647d-4cfe-a1b6-80e5436cac3f"
+                                    },
+                                    {
+                                      "name": "Azure DevOps Pipelines_ Get",
+                                      "id": "71579714-cfce-4f37-b96f-96b3e9109afb",
+                                      "protocolProfileBehavior": {
+                                        "disableBodyPruning": true
+                                      },
+                                      "request": {
+                                        "method": "GET",
+                                        "header": [
+                                          {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                          }
+                                        ],
+                                        "url": {
+                                          "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.DevOps/pipelines/:pipelineName?api-version=<string>",
+                                          "host": [
+                                            "{{baseUrl}}"
+                                          ],
+                                          "path": [
+                                            "subscriptions",
+                                            ":subscriptionId",
+                                            "resourceGroups",
+                                            ":resourceGroupName",
+                                            "providers",
+                                            "Microsoft.DevOps",
+                                            "pipelines",
+                                            ":pipelineName"
+                                          ],
+                                          "query": [
+                                            {
+                                              "description": "(Required) API version to be used with the HTTP request.",
+                                              "key": "api-version",
+                                              "value": "<string>"
+                                            }
+                                          ],
+                                          "variable": [
+                                            {
+                                              "id": "3bf8d1b2-6b9f-4c41-bdb3-bf09c3eaca8b",
+                                              "key": "subscriptionId",
+                                              "value": "<string>",
+                                              "description": "(Required) Unique identifier of the Azure subscription. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000)."
+                                            },
+                                            {
+                                              "id": "87a1db57-0fef-440f-92ee-caebe6dab1eb",
+                                              "key": "resourceGroupName",
+                                              "value": "<string>",
+                                              "description": "(Required) Name of the resource group within the Azure subscription."
+                                            },
+                                            {
+                                              "id": "1745780c-5e1c-46d7-a2a6-041f522b1de8",
+                                              "key": "pipelineName",
+                                              "value": "<string>",
+                                              "description": "(Required) The name of the Azure Pipeline resource in ARM."
+                                            }
+                                          ]
+                                        },
+                                        "description": "Gets an existing Azure Pipeline."
+                                      },
+                                      "response": [
+                                        {
+                                          "id": "37d24fad-d2cf-4b4a-ba03-5178792f3848",
+                                          "name": "The Azure Pipeline has been fetched successfully.",
+                                          "originalRequest": {
+                                            "method": "GET",
+                                            "header": [
+                                              {
+                                                "key": "Accept",
+                                                "value": "application/json"
+                                              },
+                                              {
+                                                "description": "Added as a part of security scheme: oauth2",
+                                                "key": "Authorization",
+                                                "value": "<token>"
+                                              }
+                                            ],
+                                            "url": {
+                                              "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.DevOps/pipelines/:pipelineName?api-version=<string>",
+                                              "host": [
+                                                "{{baseUrl}}"
+                                              ],
+                                              "path": [
+                                                "subscriptions",
+                                                ":subscriptionId",
+                                                "resourceGroups",
+                                                ":resourceGroupName",
+                                                "providers",
+                                                "Microsoft.DevOps",
+                                                "pipelines",
+                                                ":pipelineName"
+                                              ],
+                                              "query": [
+                                                {
+                                                  "description": "(Required) API version to be used with the HTTP request.",
+                                                  "key": "api-version",
+                                                  "value": "<string>"
+                                                }
+                                              ],
+                                              "variable": [
+                                                {
+                                                  "key": "subscriptionId"
+                                                },
+                                                {
+                                                  "key": "resourceGroupName"
+                                                },
+                                                {
+                                                  "key": "pipelineName"
+                                                }
+                                              ]
+                                            }
+                                          },
+                                          "status": "OK",
+                                          "code": 200,
+                                          "_postman_previewlanguage": "json",
+                                          "header": [
+                                            {
+                                              "key": "Content-Type",
+                                              "value": "application/json"
+                                            }
+                                          ],
+                                          "cookie": [],
+                                          "responseTime": null,
+                                          "body": "{\n  \"properties\": {},\n  \"id\": \"<string>\",\n  \"location\": \"<string>\",\n  \"name\": \"<string>\",\n  \"tags\": {\n    \"sint_07\": \"<string>\"\n  },\n  \"type\": \"<string>\"\n}",
+                                          "createdAt": "2026-07-28T10:53:07.000Z",
+                                          "updatedAt": "2026-07-28T10:53:07.000Z",
+                                          "uid": "35240-37d24fad-d2cf-4b4a-ba03-5178792f3848"
+                                        },
+                                        {
+                                          "id": "4c5161d5-316d-486c-b810-528ad68738a5",
+                                          "name": "Error response describing why the operation failed.",
+                                          "originalRequest": {
+                                            "method": "GET",
+                                            "header": [
+                                              {
+                                                "key": "Accept",
+                                                "value": "application/json"
+                                              },
+                                              {
+                                                "description": "Added as a part of security scheme: oauth2",
+                                                "key": "Authorization",
+                                                "value": "<token>"
+                                              }
+                                            ],
+                                            "url": {
+                                              "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.DevOps/pipelines/:pipelineName?api-version=<string>",
+                                              "host": [
+                                                "{{baseUrl}}"
+                                              ],
+                                              "path": [
+                                                "subscriptions",
+                                                ":subscriptionId",
+                                                "resourceGroups",
+                                                ":resourceGroupName",
+                                                "providers",
+                                                "Microsoft.DevOps",
+                                                "pipelines",
+                                                ":pipelineName"
+                                              ],
+                                              "query": [
+                                                {
+                                                  "description": "(Required) API version to be used with the HTTP request.",
+                                                  "key": "api-version",
+                                                  "value": "<string>"
+                                                }
+                                              ],
+                                              "variable": [
+                                                {
+                                                  "key": "subscriptionId"
+                                                },
+                                                {
+                                                  "key": "resourceGroupName"
+                                                },
+                                                {
+                                                  "key": "pipelineName"
+                                                }
+                                              ]
+                                            }
+                                          },
+                                          "status": "Internal Server Error",
+                                          "code": 500,
+                                          "_postman_previewlanguage": "json",
+                                          "header": [
+                                            {
+                                              "key": "Content-Type",
+                                              "value": "application/json"
+                                            }
+                                          ],
+                                          "cookie": [],
+                                          "responseTime": null,
+                                          "body": "{\n  \"error\": {\n    \"code\": \"<string>\",\n    \"details\": [\n      {\n        \"value\": \"<Circular reference to #/components/schemas/CloudErrorBody detected>\"\n      },\n      {\n        \"value\": \"<Circular reference to #/components/schemas/CloudErrorBody detected>\"\n      }\n    ],\n    \"message\": \"<string>\",\n    \"target\": \"<string>\"\n  }\n}",
+                                          "createdAt": "2026-07-28T10:53:07.000Z",
+                                          "updatedAt": "2026-07-28T10:53:07.000Z",
+                                          "uid": "35240-4c5161d5-316d-486c-b810-528ad68738a5"
+                                        }
+                                      ],
+                                      "createdAt": "2026-07-28T10:53:07.000Z",
+                                      "updatedAt": "2026-07-28T10:53:07.000Z",
+                                      "uid": "35240-71579714-cfce-4f37-b96f-96b3e9109afb"
+                                    },
+                                    {
+                                      "name": "Azure DevOps Pipelines_ Update",
+                                      "id": "d04f7878-ca16-4678-95df-876ab597717f",
+                                      "protocolProfileBehavior": {
+                                        "disableBodyPruning": true
+                                      },
+                                      "request": {
+                                        "method": "PATCH",
+                                        "header": [
+                                          {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                          },
+                                          {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                          }
+                                        ],
+                                        "body": {
+                                          "mode": "raw",
+                                          "raw": "{\n  \"tags\": {\n    \"sed_20\": \"<string>\"\n  }\n}",
+                                          "options": {
+                                            "raw": {
+                                              "headerFamily": "json",
+                                              "language": "json"
+                                            }
+                                          }
+                                        },
+                                        "url": {
+                                          "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.DevOps/pipelines/:pipelineName?api-version=<string>",
+                                          "host": [
+                                            "{{baseUrl}}"
+                                          ],
+                                          "path": [
+                                            "subscriptions",
+                                            ":subscriptionId",
+                                            "resourceGroups",
+                                            ":resourceGroupName",
+                                            "providers",
+                                            "Microsoft.DevOps",
+                                            "pipelines",
+                                            ":pipelineName"
+                                          ],
+                                          "query": [
+                                            {
+                                              "description": "(Required) API version to be used with the HTTP request.",
+                                              "key": "api-version",
+                                              "value": "<string>"
+                                            }
+                                          ],
+                                          "variable": [
+                                            {
+                                              "id": "4fda6b3f-754c-49f4-91c2-680f47c1e603",
+                                              "key": "subscriptionId",
+                                              "value": "<string>",
+                                              "description": "(Required) Unique identifier of the Azure subscription. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000)."
+                                            },
+                                            {
+                                              "id": "98821916-9750-42f2-8603-9632bf63dd37",
+                                              "key": "resourceGroupName",
+                                              "value": "<string>",
+                                              "description": "(Required) Name of the resource group within the Azure subscription."
+                                            },
+                                            {
+                                              "id": "9201a8b9-9cb5-4c4e-a7f2-6530a9449362",
+                                              "key": "pipelineName",
+                                              "value": "<string>",
+                                              "description": "(Required) The name of the Azure Pipeline resource."
+                                            }
+                                          ]
+                                        },
+                                        "description": "Updates the properties of an Azure Pipeline. Currently, only tags can be updated."
+                                      },
+                                      "response": [
+                                        {
+                                          "id": "d9336593-fdca-4637-9b64-6fc11be0abe2",
+                                          "name": "The Azure Pipeline has been updated successfully.",
+                                          "originalRequest": {
+                                            "method": "PATCH",
+                                            "header": [
+                                              {
+                                                "key": "Content-Type",
+                                                "value": "application/json"
+                                              },
+                                              {
+                                                "key": "Accept",
+                                                "value": "application/json"
+                                              },
+                                              {
+                                                "description": "Added as a part of security scheme: oauth2",
+                                                "key": "Authorization",
+                                                "value": "<token>"
+                                              }
+                                            ],
+                                            "body": {
+                                              "mode": "raw",
+                                              "raw": "{\n  \"tags\": {\n    \"sed_20\": \"<string>\"\n  }\n}",
+                                              "options": {
+                                                "raw": {
+                                                  "headerFamily": "json",
+                                                  "language": "json"
+                                                }
+                                              }
+                                            },
+                                            "url": {
+                                              "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.DevOps/pipelines/:pipelineName?api-version=<string>",
+                                              "host": [
+                                                "{{baseUrl}}"
+                                              ],
+                                              "path": [
+                                                "subscriptions",
+                                                ":subscriptionId",
+                                                "resourceGroups",
+                                                ":resourceGroupName",
+                                                "providers",
+                                                "Microsoft.DevOps",
+                                                "pipelines",
+                                                ":pipelineName"
+                                              ],
+                                              "query": [
+                                                {
+                                                  "description": "(Required) API version to be used with the HTTP request.",
+                                                  "key": "api-version",
+                                                  "value": "<string>"
+                                                }
+                                              ],
+                                              "variable": [
+                                                {
+                                                  "key": "subscriptionId"
+                                                },
+                                                {
+                                                  "key": "resourceGroupName"
+                                                },
+                                                {
+                                                  "key": "pipelineName"
+                                                }
+                                              ]
+                                            }
+                                          },
+                                          "status": "OK",
+                                          "code": 200,
+                                          "_postman_previewlanguage": "json",
+                                          "header": [
+                                            {
+                                              "key": "Content-Type",
+                                              "value": "application/json"
+                                            }
+                                          ],
+                                          "cookie": [],
+                                          "responseTime": null,
+                                          "body": "{\n  \"properties\": {},\n  \"id\": \"<string>\",\n  \"location\": \"<string>\",\n  \"name\": \"<string>\",\n  \"tags\": {\n    \"sint_07\": \"<string>\"\n  },\n  \"type\": \"<string>\"\n}",
+                                          "createdAt": "2026-07-28T10:53:07.000Z",
+                                          "updatedAt": "2026-07-28T10:53:07.000Z",
+                                          "uid": "35240-d9336593-fdca-4637-9b64-6fc11be0abe2"
+                                        },
+                                        {
+                                          "id": "b7cec83f-836d-4f61-9d70-c509f45f75de",
+                                          "name": "Error response describing why the operation failed.",
+                                          "originalRequest": {
+                                            "method": "PATCH",
+                                            "header": [
+                                              {
+                                                "key": "Content-Type",
+                                                "value": "application/json"
+                                              },
+                                              {
+                                                "key": "Accept",
+                                                "value": "application/json"
+                                              },
+                                              {
+                                                "description": "Added as a part of security scheme: oauth2",
+                                                "key": "Authorization",
+                                                "value": "<token>"
+                                              }
+                                            ],
+                                            "body": {
+                                              "mode": "raw",
+                                              "raw": "{\n  \"tags\": {\n    \"sed_20\": \"<string>\"\n  }\n}",
+                                              "options": {
+                                                "raw": {
+                                                  "headerFamily": "json",
+                                                  "language": "json"
+                                                }
+                                              }
+                                            },
+                                            "url": {
+                                              "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.DevOps/pipelines/:pipelineName?api-version=<string>",
+                                              "host": [
+                                                "{{baseUrl}}"
+                                              ],
+                                              "path": [
+                                                "subscriptions",
+                                                ":subscriptionId",
+                                                "resourceGroups",
+                                                ":resourceGroupName",
+                                                "providers",
+                                                "Microsoft.DevOps",
+                                                "pipelines",
+                                                ":pipelineName"
+                                              ],
+                                              "query": [
+                                                {
+                                                  "description": "(Required) API version to be used with the HTTP request.",
+                                                  "key": "api-version",
+                                                  "value": "<string>"
+                                                }
+                                              ],
+                                              "variable": [
+                                                {
+                                                  "key": "subscriptionId"
+                                                },
+                                                {
+                                                  "key": "resourceGroupName"
+                                                },
+                                                {
+                                                  "key": "pipelineName"
+                                                }
+                                              ]
+                                            }
+                                          },
+                                          "status": "Internal Server Error",
+                                          "code": 500,
+                                          "_postman_previewlanguage": "json",
+                                          "header": [
+                                            {
+                                              "key": "Content-Type",
+                                              "value": "application/json"
+                                            }
+                                          ],
+                                          "cookie": [],
+                                          "responseTime": null,
+                                          "body": "{\n  \"error\": {\n    \"code\": \"<string>\",\n    \"details\": [\n      {\n        \"value\": \"<Circular reference to #/components/schemas/CloudErrorBody detected>\"\n      },\n      {\n        \"value\": \"<Circular reference to #/components/schemas/CloudErrorBody detected>\"\n      }\n    ],\n    \"message\": \"<string>\",\n    \"target\": \"<string>\"\n  }\n}",
+                                          "createdAt": "2026-07-28T10:53:07.000Z",
+                                          "updatedAt": "2026-07-28T10:53:07.000Z",
+                                          "uid": "35240-b7cec83f-836d-4f61-9d70-c509f45f75de"
+                                        }
+                                      ],
+                                      "createdAt": "2026-07-28T10:53:07.000Z",
+                                      "updatedAt": "2026-07-28T10:53:07.000Z",
+                                      "uid": "35240-d04f7878-ca16-4678-95df-876ab597717f"
+                                    },
+                                    {
+                                      "name": "Azure DevOps Pipelines_ Create or Update",
+                                      "id": "036d4d00-303a-47f9-b0c5-8c14fd1c5152",
+                                      "protocolProfileBehavior": {
+                                        "disableBodyPruning": true
+                                      },
+                                      "request": {
+                                        "method": "PUT",
+                                        "header": [
+                                          {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                          },
+                                          {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                          }
+                                        ],
+                                        "body": {
+                                          "mode": "raw",
+                                          "raw": "{\n  \"properties\": {},\n  \"id\": \"<string>\",\n  \"location\": \"<string>\",\n  \"name\": \"<string>\",\n  \"tags\": {\n    \"sint_07\": \"<string>\"\n  },\n  \"type\": \"<string>\"\n}",
+                                          "options": {
+                                            "raw": {
+                                              "headerFamily": "json",
+                                              "language": "json"
+                                            }
+                                          }
+                                        },
+                                        "url": {
+                                          "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.DevOps/pipelines/:pipelineName?api-version=<string>",
+                                          "host": [
+                                            "{{baseUrl}}"
+                                          ],
+                                          "path": [
+                                            "subscriptions",
+                                            ":subscriptionId",
+                                            "resourceGroups",
+                                            ":resourceGroupName",
+                                            "providers",
+                                            "Microsoft.DevOps",
+                                            "pipelines",
+                                            ":pipelineName"
+                                          ],
+                                          "query": [
+                                            {
+                                              "description": "(Required) API version to be used with the HTTP request.",
+                                              "key": "api-version",
+                                              "value": "<string>"
+                                            }
+                                          ],
+                                          "variable": [
+                                            {
+                                              "id": "7240aabb-4dba-4e43-a81f-87f61e2742bb",
+                                              "key": "subscriptionId",
+                                              "value": "<string>",
+                                              "description": "(Required) Unique identifier of the Azure subscription. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000)."
+                                            },
+                                            {
+                                              "id": "918862ca-448f-4687-9751-eb43c39eaf2d",
+                                              "key": "resourceGroupName",
+                                              "value": "<string>",
+                                              "description": "(Required) Name of the resource group within the Azure subscription."
+                                            },
+                                            {
+                                              "id": "d3768da5-d8ab-4150-8ba1-fb9439428428",
+                                              "key": "pipelineName",
+                                              "value": "<string>",
+                                              "description": "(Required) The name of the Azure Pipeline resource in ARM."
+                                            }
+                                          ]
+                                        },
+                                        "description": "Creates or updates an Azure Pipeline."
+                                      },
+                                      "response": [
+                                        {
+                                          "id": "d2f5c593-ce39-4c78-964d-c06d951f8386",
+                                          "name": "The Azure Pipeline has been configured successfully.",
+                                          "originalRequest": {
+                                            "method": "PUT",
+                                            "header": [
+                                              {
+                                                "key": "Content-Type",
+                                                "value": "application/json"
+                                              },
+                                              {
+                                                "key": "Accept",
+                                                "value": "application/json"
+                                              },
+                                              {
+                                                "description": "Added as a part of security scheme: oauth2",
+                                                "key": "Authorization",
+                                                "value": "<token>"
+                                              }
+                                            ],
+                                            "body": {
+                                              "mode": "raw",
+                                              "raw": "{\n  \"properties\": {},\n  \"id\": \"<string>\",\n  \"location\": \"<string>\",\n  \"name\": \"<string>\",\n  \"tags\": {\n    \"sint_07\": \"<string>\"\n  },\n  \"type\": \"<string>\"\n}",
+                                              "options": {
+                                                "raw": {
+                                                  "headerFamily": "json",
+                                                  "language": "json"
+                                                }
+                                              }
+                                            },
+                                            "url": {
+                                              "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.DevOps/pipelines/:pipelineName?api-version=<string>",
+                                              "host": [
+                                                "{{baseUrl}}"
+                                              ],
+                                              "path": [
+                                                "subscriptions",
+                                                ":subscriptionId",
+                                                "resourceGroups",
+                                                ":resourceGroupName",
+                                                "providers",
+                                                "Microsoft.DevOps",
+                                                "pipelines",
+                                                ":pipelineName"
+                                              ],
+                                              "query": [
+                                                {
+                                                  "description": "(Required) API version to be used with the HTTP request.",
+                                                  "key": "api-version",
+                                                  "value": "<string>"
+                                                }
+                                              ],
+                                              "variable": [
+                                                {
+                                                  "key": "subscriptionId"
+                                                },
+                                                {
+                                                  "key": "resourceGroupName"
+                                                },
+                                                {
+                                                  "key": "pipelineName"
+                                                }
+                                              ]
+                                            }
+                                          },
+                                          "status": "OK",
+                                          "code": 200,
+                                          "_postman_previewlanguage": "json",
+                                          "header": [
+                                            {
+                                              "key": "Content-Type",
+                                              "value": "application/json"
+                                            }
+                                          ],
+                                          "cookie": [],
+                                          "responseTime": null,
+                                          "body": "{\n  \"properties\": {},\n  \"id\": \"<string>\",\n  \"location\": \"<string>\",\n  \"name\": \"<string>\",\n  \"tags\": {\n    \"sint_07\": \"<string>\"\n  },\n  \"type\": \"<string>\"\n}",
+                                          "createdAt": "2026-07-28T10:53:07.000Z",
+                                          "updatedAt": "2026-07-28T10:53:07.000Z",
+                                          "uid": "35240-d2f5c593-ce39-4c78-964d-c06d951f8386"
+                                        },
+                                        {
+                                          "id": "8849da7a-3ece-44b1-947b-462fc5fb0ac2",
+                                          "name": "The request has been accepted for processing and the Azure Pipeline will be configured asynchronously.",
+                                          "originalRequest": {
+                                            "method": "PUT",
+                                            "header": [
+                                              {
+                                                "key": "Content-Type",
+                                                "value": "application/json"
+                                              },
+                                              {
+                                                "description": "Added as a part of security scheme: oauth2",
+                                                "key": "Authorization",
+                                                "value": "<token>"
+                                              }
+                                            ],
+                                            "body": {
+                                              "mode": "raw",
+                                              "raw": "{\n  \"properties\": {},\n  \"id\": \"<string>\",\n  \"location\": \"<string>\",\n  \"name\": \"<string>\",\n  \"tags\": {\n    \"sint_07\": \"<string>\"\n  },\n  \"type\": \"<string>\"\n}",
+                                              "options": {
+                                                "raw": {
+                                                  "headerFamily": "json",
+                                                  "language": "json"
+                                                }
+                                              }
+                                            },
+                                            "url": {
+                                              "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.DevOps/pipelines/:pipelineName?api-version=<string>",
+                                              "host": [
+                                                "{{baseUrl}}"
+                                              ],
+                                              "path": [
+                                                "subscriptions",
+                                                ":subscriptionId",
+                                                "resourceGroups",
+                                                ":resourceGroupName",
+                                                "providers",
+                                                "Microsoft.DevOps",
+                                                "pipelines",
+                                                ":pipelineName"
+                                              ],
+                                              "query": [
+                                                {
+                                                  "description": "(Required) API version to be used with the HTTP request.",
+                                                  "key": "api-version",
+                                                  "value": "<string>"
+                                                }
+                                              ],
+                                              "variable": [
+                                                {
+                                                  "key": "subscriptionId"
+                                                },
+                                                {
+                                                  "key": "resourceGroupName"
+                                                },
+                                                {
+                                                  "key": "pipelineName"
+                                                }
+                                              ]
+                                            }
+                                          },
+                                          "status": "Accepted",
+                                          "code": 202,
+                                          "_postman_previewlanguage": "text",
+                                          "header": [],
+                                          "cookie": [],
+                                          "responseTime": null,
+                                          "body": null,
+                                          "createdAt": "2026-07-28T10:53:07.000Z",
+                                          "updatedAt": "2026-07-28T10:53:07.000Z",
+                                          "uid": "35240-8849da7a-3ece-44b1-947b-462fc5fb0ac2"
+                                        },
+                                        {
+                                          "id": "0968805f-4451-458a-890b-82fe81013350",
+                                          "name": "Error response describing why the operation failed.",
+                                          "originalRequest": {
+                                            "method": "PUT",
+                                            "header": [
+                                              {
+                                                "key": "Content-Type",
+                                                "value": "application/json"
+                                              },
+                                              {
+                                                "key": "Accept",
+                                                "value": "application/json"
+                                              },
+                                              {
+                                                "description": "Added as a part of security scheme: oauth2",
+                                                "key": "Authorization",
+                                                "value": "<token>"
+                                              }
+                                            ],
+                                            "body": {
+                                              "mode": "raw",
+                                              "raw": "{\n  \"properties\": {},\n  \"id\": \"<string>\",\n  \"location\": \"<string>\",\n  \"name\": \"<string>\",\n  \"tags\": {\n    \"sint_07\": \"<string>\"\n  },\n  \"type\": \"<string>\"\n}",
+                                              "options": {
+                                                "raw": {
+                                                  "headerFamily": "json",
+                                                  "language": "json"
+                                                }
+                                              }
+                                            },
+                                            "url": {
+                                              "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.DevOps/pipelines/:pipelineName?api-version=<string>",
+                                              "host": [
+                                                "{{baseUrl}}"
+                                              ],
+                                              "path": [
+                                                "subscriptions",
+                                                ":subscriptionId",
+                                                "resourceGroups",
+                                                ":resourceGroupName",
+                                                "providers",
+                                                "Microsoft.DevOps",
+                                                "pipelines",
+                                                ":pipelineName"
+                                              ],
+                                              "query": [
+                                                {
+                                                  "description": "(Required) API version to be used with the HTTP request.",
+                                                  "key": "api-version",
+                                                  "value": "<string>"
+                                                }
+                                              ],
+                                              "variable": [
+                                                {
+                                                  "key": "subscriptionId"
+                                                },
+                                                {
+                                                  "key": "resourceGroupName"
+                                                },
+                                                {
+                                                  "key": "pipelineName"
+                                                }
+                                              ]
+                                            }
+                                          },
+                                          "status": "Internal Server Error",
+                                          "code": 500,
+                                          "_postman_previewlanguage": "json",
+                                          "header": [
+                                            {
+                                              "key": "Content-Type",
+                                              "value": "application/json"
+                                            }
+                                          ],
+                                          "cookie": [],
+                                          "responseTime": null,
+                                          "body": "{\n  \"error\": {\n    \"code\": \"<string>\",\n    \"details\": [\n      {\n        \"value\": \"<Circular reference to #/components/schemas/CloudErrorBody detected>\"\n      },\n      {\n        \"value\": \"<Circular reference to #/components/schemas/CloudErrorBody detected>\"\n      }\n    ],\n    \"message\": \"<string>\",\n    \"target\": \"<string>\"\n  }\n}",
+                                          "createdAt": "2026-07-28T10:53:07.000Z",
+                                          "updatedAt": "2026-07-28T10:53:07.000Z",
+                                          "uid": "35240-0968805f-4451-458a-890b-82fe81013350"
+                                        }
+                                      ],
+                                      "createdAt": "2026-07-28T10:53:07.000Z",
+                                      "updatedAt": "2026-07-28T10:53:07.000Z",
+                                      "uid": "35240-036d4d00-303a-47f9-b0c5-8c14fd1c5152"
+                                    }
+                                  ],
+                                  "id": "47253ca2-c111-4ff2-b9fd-ab0f279a0913",
+                                  "createdAt": "2026-07-28T10:53:07.000Z",
+                                  "updatedAt": "2026-07-28T10:53:07.000Z",
+                                  "uid": "35240-47253ca2-c111-4ff2-b9fd-ab0f279a0913"
+                                },
+                                {
+                                  "name": "Azure DevOps Pipelines_ List by Resource Group",
+                                  "id": "9a768970-673f-4b9e-ac06-2baa62294edf",
+                                  "protocolProfileBehavior": {
+                                    "disableBodyPruning": true
+                                  },
+                                  "request": {
+                                    "method": "GET",
+                                    "header": [
+                                      {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                      }
+                                    ],
+                                    "url": {
+                                      "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.DevOps/pipelines?api-version=<string>",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "subscriptions",
+                                        ":subscriptionId",
+                                        "resourceGroups",
+                                        ":resourceGroupName",
+                                        "providers",
+                                        "Microsoft.DevOps",
+                                        "pipelines"
+                                      ],
+                                      "query": [
+                                        {
+                                          "description": "(Required) API version to be used with the HTTP request.",
+                                          "key": "api-version",
+                                          "value": "<string>"
+                                        }
+                                      ],
+                                      "variable": [
+                                        {
+                                          "id": "150640df-2de9-47d2-894a-fe328e903584",
+                                          "key": "subscriptionId",
+                                          "value": "<string>",
+                                          "description": "(Required) Unique identifier of the Azure subscription. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000)."
+                                        },
+                                        {
+                                          "id": "ca7a9ef6-8df8-46dd-bb8a-d0350075808a",
+                                          "key": "resourceGroupName",
+                                          "value": "<string>",
+                                          "description": "(Required) Name of the resource group within the Azure subscription."
+                                        }
+                                      ]
+                                    },
+                                    "description": "Lists all Azure Pipelines under the specified resource group."
+                                  },
+                                  "response": [
+                                    {
+                                      "id": "d464ee22-bca6-4f18-b1c2-3f2d61efffb5",
+                                      "name": "The Azure Pipelines have been fetched successfully.",
+                                      "originalRequest": {
+                                        "method": "GET",
+                                        "header": [
+                                          {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                          },
+                                          {
+                                            "description": "Added as a part of security scheme: oauth2",
+                                            "key": "Authorization",
+                                            "value": "<token>"
+                                          }
+                                        ],
+                                        "url": {
+                                          "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.DevOps/pipelines?api-version=<string>",
+                                          "host": [
+                                            "{{baseUrl}}"
+                                          ],
+                                          "path": [
+                                            "subscriptions",
+                                            ":subscriptionId",
+                                            "resourceGroups",
+                                            ":resourceGroupName",
+                                            "providers",
+                                            "Microsoft.DevOps",
+                                            "pipelines"
+                                          ],
+                                          "query": [
+                                            {
+                                              "description": "(Required) API version to be used with the HTTP request.",
+                                              "key": "api-version",
+                                              "value": "<string>"
+                                            }
+                                          ],
+                                          "variable": [
+                                            {
+                                              "key": "subscriptionId"
+                                            },
+                                            {
+                                              "key": "resourceGroupName"
+                                            }
+                                          ]
+                                        }
+                                      },
+                                      "status": "OK",
+                                      "code": 200,
+                                      "_postman_previewlanguage": "json",
+                                      "header": [
+                                        {
+                                          "key": "Content-Type",
+                                          "value": "application/json"
+                                        }
+                                      ],
+                                      "cookie": [],
+                                      "responseTime": null,
+                                      "body": "{\n  \"nextLink\": \"<string>\",\n  \"value\": [\n    {\n      \"properties\": {},\n      \"id\": \"<string>\",\n      \"location\": \"<string>\",\n      \"name\": \"<string>\",\n      \"tags\": {\n        \"est_7\": \"<string>\",\n        \"magna_03\": \"<string>\"\n      },\n      \"type\": \"<string>\"\n    },\n    {\n      \"properties\": {},\n      \"id\": \"<string>\",\n      \"location\": \"<string>\",\n      \"name\": \"<string>\",\n      \"tags\": {\n        \"tempor1ab\": \"<string>\",\n        \"anim_6b\": \"<string>\",\n        \"minimc\": \"<string>\"\n      },\n      \"type\": \"<string>\"\n    }\n  ]\n}",
+                                      "createdAt": "2026-07-28T10:53:07.000Z",
+                                      "updatedAt": "2026-07-28T10:53:07.000Z",
+                                      "uid": "35240-d464ee22-bca6-4f18-b1c2-3f2d61efffb5"
+                                    },
+                                    {
+                                      "id": "eac97bfd-4f70-430f-bc19-58762a9c30b3",
+                                      "name": "Error response describing why the operation failed.",
+                                      "originalRequest": {
+                                        "method": "GET",
+                                        "header": [
+                                          {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                          },
+                                          {
+                                            "description": "Added as a part of security scheme: oauth2",
+                                            "key": "Authorization",
+                                            "value": "<token>"
+                                          }
+                                        ],
+                                        "url": {
+                                          "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.DevOps/pipelines?api-version=<string>",
+                                          "host": [
+                                            "{{baseUrl}}"
+                                          ],
+                                          "path": [
+                                            "subscriptions",
+                                            ":subscriptionId",
+                                            "resourceGroups",
+                                            ":resourceGroupName",
+                                            "providers",
+                                            "Microsoft.DevOps",
+                                            "pipelines"
+                                          ],
+                                          "query": [
+                                            {
+                                              "description": "(Required) API version to be used with the HTTP request.",
+                                              "key": "api-version",
+                                              "value": "<string>"
+                                            }
+                                          ],
+                                          "variable": [
+                                            {
+                                              "key": "subscriptionId"
+                                            },
+                                            {
+                                              "key": "resourceGroupName"
+                                            }
+                                          ]
+                                        }
+                                      },
+                                      "status": "Internal Server Error",
+                                      "code": 500,
+                                      "_postman_previewlanguage": "json",
+                                      "header": [
+                                        {
+                                          "key": "Content-Type",
+                                          "value": "application/json"
+                                        }
+                                      ],
+                                      "cookie": [],
+                                      "responseTime": null,
+                                      "body": "{\n  \"error\": {\n    \"code\": \"<string>\",\n    \"details\": [\n      {\n        \"value\": \"<Circular reference to #/components/schemas/CloudErrorBody detected>\"\n      },\n      {\n        \"value\": \"<Circular reference to #/components/schemas/CloudErrorBody detected>\"\n      }\n    ],\n    \"message\": \"<string>\",\n    \"target\": \"<string>\"\n  }\n}",
+                                      "createdAt": "2026-07-28T10:53:07.000Z",
+                                      "updatedAt": "2026-07-28T10:53:07.000Z",
+                                      "uid": "35240-eac97bfd-4f70-430f-bc19-58762a9c30b3"
+                                    }
+                                  ],
+                                  "createdAt": "2026-07-28T10:53:07.000Z",
+                                  "updatedAt": "2026-07-28T10:53:07.000Z",
+                                  "uid": "35240-9a768970-673f-4b9e-ac06-2baa62294edf"
+                                }
+                              ],
+                              "id": "9334767c-a900-4216-a794-5abc2197780e",
+                              "createdAt": "2026-07-28T10:53:07.000Z",
+                              "updatedAt": "2026-07-28T10:53:07.000Z",
+                              "uid": "35240-9334767c-a900-4216-a794-5abc2197780e"
+                            }
+                          ],
+                          "id": "350c6fe8-d1dc-4c65-b3e5-1918b1ad8898",
+                          "createdAt": "2026-07-28T10:53:07.000Z",
+                          "updatedAt": "2026-07-28T10:53:07.000Z",
+                          "uid": "35240-350c6fe8-d1dc-4c65-b3e5-1918b1ad8898"
+                        }
+                      ],
+                      "id": "5a8462d1-db07-42ac-925c-6bb412ce7609",
+                      "createdAt": "2026-07-28T10:53:07.000Z",
+                      "updatedAt": "2026-07-28T10:53:07.000Z",
+                      "uid": "35240-5a8462d1-db07-42ac-925c-6bb412ce7609"
+                    }
+                  ],
+                  "id": "35477f04-55bb-4560-8b14-b5abce16f0f0",
+                  "createdAt": "2026-07-28T10:53:07.000Z",
+                  "updatedAt": "2026-07-28T10:53:07.000Z",
+                  "uid": "35240-35477f04-55bb-4560-8b14-b5abce16f0f0"
+                }
+              ],
+              "id": "eb2183c0-11cb-47dc-b140-569950843801",
+              "createdAt": "2026-07-28T10:53:07.000Z",
+              "updatedAt": "2026-07-28T10:53:07.000Z",
+              "uid": "35240-eb2183c0-11cb-47dc-b140-569950843801"
+            }
+          ],
+          "id": "0b4b670c-00c7-4526-a6d8-9b74dd76a339",
+          "createdAt": "2026-07-28T10:53:07.000Z",
+          "updatedAt": "2026-07-28T10:53:07.000Z",
+          "uid": "35240-0b4b670c-00c7-4526-a6d8-9b74dd76a339"
+        }
+      ],
+      "id": "916022f9-ced8-4ad1-a7c6-efd8bcd42a26",
+      "createdAt": "2026-07-28T10:53:07.000Z",
+      "updatedAt": "2026-07-28T10:53:07.000Z",
+      "uid": "35240-916022f9-ced8-4ad1-a7c6-efd8bcd42a26"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "user_impersonation",
+        "type": "string"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://login.microsoftonline.com/common/oauth2/authorize",
+        "type": "string"
+      },
+      {
+        "key": "grant_type",
+        "value": "implicit",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://management.azure.com"
+    }
+  ]
+}
