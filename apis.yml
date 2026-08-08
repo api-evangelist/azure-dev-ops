@@ -29,7 +29,7 @@ tags:
 url: >-
   https://raw.githubusercontent.com/api-evangelist/azure-dev-ops/refs/heads/main/apis.yml
 created: '2024-01-01'
-modified: '2026-04-19'
+modified: '2026-08-06'
 specificationVersion: '0.19'
 apis:
 - aid: azure-dev-ops:azure-dev-ops-operations-api
@@ -85,6 +85,12 @@ apis:
   - type: Documentation
     url: https://learn.microsoft.com/en-us/rest/api/azure/devops/pipelines/
 common:
+  - type: MCPServer
+    name: Azure DevOps Remote MCP Server
+    url: https://mcp.dev.azure.com/{organization}
+  - type: MCPDocumentation
+    name: Azure DevOps Remote MCP Server Documentation
+    url: https://learn.microsoft.com/en-us/azure/devops/mcp-server/remote-mcp-server
   - type: PostmanWorkspace
     url: https://www.postman.com/kinlaneapi/azure-devops/overview
   - type: AgenticAccess
