@@ -1,0 +1,222 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Azure DevOps Operations Pipelines API",
+    "version": "2.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Pipelines",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Azure DevOps Pipelines_ List by Subscription",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/subscriptions/:subscriptionId/providers/Microsoft.DevOps/pipelines",
+            "params": [
+              {
+                "name": "subscriptionId",
+                "value": "",
+                "type": "path",
+                "description": "Unique identifier of the Azure subscription. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000)."
+              },
+              {
+                "name": "api-version",
+                "value": "",
+                "type": "query",
+                "description": "API version to be used with the HTTP request."
+              }
+            ]
+          },
+          "docs": "Lists all Azure Pipelines under the specified subscription."
+        },
+        {
+          "info": {
+            "name": "Azure DevOps Pipelines_ List by Resource Group",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.DevOps/pipelines",
+            "params": [
+              {
+                "name": "subscriptionId",
+                "value": "",
+                "type": "path",
+                "description": "Unique identifier of the Azure subscription. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000)."
+              },
+              {
+                "name": "resourceGroupName",
+                "value": "",
+                "type": "path",
+                "description": "Name of the resource group within the Azure subscription."
+              },
+              {
+                "name": "api-version",
+                "value": "",
+                "type": "query",
+                "description": "API version to be used with the HTTP request."
+              }
+            ]
+          },
+          "docs": "Lists all Azure Pipelines under the specified resource group."
+        },
+        {
+          "info": {
+            "name": "Azure DevOps Pipelines_ Get",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.DevOps/pipelines/:pipelineName",
+            "params": [
+              {
+                "name": "subscriptionId",
+                "value": "",
+                "type": "path",
+                "description": "Unique identifier of the Azure subscription. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000)."
+              },
+              {
+                "name": "resourceGroupName",
+                "value": "",
+                "type": "path",
+                "description": "Name of the resource group within the Azure subscription."
+              },
+              {
+                "name": "api-version",
+                "value": "",
+                "type": "query",
+                "description": "API version to be used with the HTTP request."
+              },
+              {
+                "name": "pipelineName",
+                "value": "example-value",
+                "type": "path",
+                "description": "The name of the Azure Pipeline resource in ARM."
+              }
+            ]
+          },
+          "docs": "Gets an existing Azure Pipeline."
+        },
+        {
+          "info": {
+            "name": "Azure DevOps Pipelines_ Create or Update",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.DevOps/pipelines/:pipelineName",
+            "params": [
+              {
+                "name": "subscriptionId",
+                "value": "",
+                "type": "path",
+                "description": "Unique identifier of the Azure subscription. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000)."
+              },
+              {
+                "name": "resourceGroupName",
+                "value": "",
+                "type": "path",
+                "description": "Name of the resource group within the Azure subscription."
+              },
+              {
+                "name": "api-version",
+                "value": "",
+                "type": "query",
+                "description": "API version to be used with the HTTP request."
+              },
+              {
+                "name": "pipelineName",
+                "value": "example-value",
+                "type": "path",
+                "description": "The name of the Azure Pipeline resource in ARM."
+              }
+            ]
+          },
+          "docs": "Creates or updates an Azure Pipeline."
+        },
+        {
+          "info": {
+            "name": "Azure DevOps Pipelines_ Update",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.DevOps/pipelines/:pipelineName",
+            "params": [
+              {
+                "name": "subscriptionId",
+                "value": "",
+                "type": "path",
+                "description": "Unique identifier of the Azure subscription. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000)."
+              },
+              {
+                "name": "resourceGroupName",
+                "value": "",
+                "type": "path",
+                "description": "Name of the resource group within the Azure subscription."
+              },
+              {
+                "name": "api-version",
+                "value": "",
+                "type": "query",
+                "description": "API version to be used with the HTTP request."
+              },
+              {
+                "name": "pipelineName",
+                "value": "example-value",
+                "type": "path",
+                "description": "The name of the Azure Pipeline resource."
+              }
+            ]
+          },
+          "docs": "Updates the properties of an Azure Pipeline. Currently, only tags can be updated."
+        },
+        {
+          "info": {
+            "name": "Azure DevOps Pipelines_ Delete",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.DevOps/pipelines/:pipelineName",
+            "params": [
+              {
+                "name": "subscriptionId",
+                "value": "",
+                "type": "path",
+                "description": "Unique identifier of the Azure subscription. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000)."
+              },
+              {
+                "name": "resourceGroupName",
+                "value": "",
+                "type": "path",
+                "description": "Name of the resource group within the Azure subscription."
+              },
+              {
+                "name": "api-version",
+                "value": "",
+                "type": "query",
+                "description": "API version to be used with the HTTP request."
+              },
+              {
+                "name": "pipelineName",
+                "value": "example-value",
+                "type": "path",
+                "description": "The name of the Azure Pipeline resource."
+              }
+            ]
+          },
+          "docs": "Deletes an Azure Pipeline."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

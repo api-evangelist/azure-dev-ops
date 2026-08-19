@@ -1,0 +1,37 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Azure DevOps Operations PipelineTemplateDefinitions API",
+    "version": "2.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "PipelineTemplateDefinitions",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Azure DevOps Pipeline Template Definitions_ List",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/providers/Microsoft.DevOps/pipelineTemplateDefinitions",
+            "params": [
+              {
+                "name": "api-version",
+                "value": "",
+                "type": "query",
+                "description": "API version to be used with the HTTP request."
+              }
+            ]
+          },
+          "docs": "Lists all pipeline templates which can be used to configure an Azure Pipeline."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

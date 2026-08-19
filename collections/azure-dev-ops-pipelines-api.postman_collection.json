@@ -1,0 +1,1532 @@
+{
+  "item": [
+    {
+      "id": "ff21359d-db67-49fc-8f31-14f8c6e7a498",
+      "name": "Pipelines",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "e792fea4-7630-45c8-a77f-450f0e8b5174",
+          "name": "Azure DevOps Pipelines_ List by Subscription",
+          "request": {
+            "name": "Azure DevOps Pipelines_ List by Subscription",
+            "description": {
+              "content": "Lists all Azure Pipelines under the specified subscription.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "subscriptions",
+                ":subscriptionId",
+                "providers",
+                "Microsoft.DevOps",
+                "pipelines"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "api-version",
+                  "value": "<string>",
+                  "description": "(Required) API version to be used with the HTTP request."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "subscriptionId",
+                  "description": "(Required) Unique identifier of the Azure subscription. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000)."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c45d3974-d651-4a93-acde-546a8ca8e69a",
+              "name": "The Azure Pipelines have been fetched successfully.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions",
+                    ":subscriptionId",
+                    "providers",
+                    "Microsoft.DevOps",
+                    "pipelines"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2019-07-01-preview"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) Unique identifier of the Azure subscription. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000)."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"value\": [\n    {\n      \"id\": \"/subscriptions/{subscriptionId}/resourceGroups/myAspNetWebAppPipeline-rg/providers/Microsoft.DevOps/pipelines/myAspNetWebAppPipeline\",\n      \"location\": \"South India\",\n      \"name\": \"myAspNetWebAppPipeline\",\n      \"properties\": {\n        \"bootstrapConfiguration\": {\n          \"template\": {\n            \"id\": \"ms.vss-continuous-delivery-pipeline-templates.aspnet-windowswebapp\",\n            \"parameters\": {\n              \"appInsightLocation\": \"South India\",\n              \"appServicePlan\": \"S1 Standard\",\n              \"location\": \"South India\",\n              \"resourceGroup\": \"myAspNetWebAppPipeline-rg\",\n              \"subscriptionId\": \"{subscriptionId}\",\n              \"webAppName\": \"myAspNetWebApp\"\n            }\n          }\n        },\n        \"organization\": {\n          \"name\": \"myAspNetWebAppPipeline-org\"\n        },\n        \"project\": {\n          \"name\": \"myAspNetWebAppPipeline-project\"\n        }\n      },\n      \"type\": \"Microsoft.DevOps/pipelines\"\n    },\n    {\n      \"id\": \"/subscriptions/{subscriptionId}/resourceGroups/myAspNetWebAppPipeline-rg1/providers/Microsoft.DevOps/pipelines/myAspNetWebAppPipeline1\",\n      \"location\": \"South India\",\n      \"name\": \"myAspNetWebAppPipeline1\",\n      \"properties\": {\n        \"bootstrapConfiguration\": {\n          \"template\": {\n            \"id\": \"ms.vss-continuous-delivery-pipeline-templates.aspnet-windowswebapp\",\n            \"parameters\": {\n              \"appInsightLocation\": \"South India\",\n              \"appServicePlan\": \"S1 Standard\",\n              \"location\": \"South India\",\n              \"resourceGroup\": \"myAspNetWebAppPipeline-rg\",\n              \"subscriptionId\": \"{subscriptionId}\",\n              \"webAppName\": \"myAspNetWebApp\"\n            }\n          }\n        },\n        \"organization\": {\n          \"name\": \"myAspNetWebAppPipeline-org1\"\n        },\n        \"project\": {\n          \"name\": \"myAspNetWebAppPipeline-project1\"\n        }\n      },\n      \"type\": \"Microsoft.DevOps/pipelines\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "fdce1867-cdc3-4bce-8746-720ea106073d",
+              "name": "Error response describing why the operation failed.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions",
+                    ":subscriptionId",
+                    "providers",
+                    "Microsoft.DevOps",
+                    "pipelines"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2019-07-01-preview"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) Unique identifier of the Azure subscription. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000)."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": \"string\",\n    \"details\": [\n      {\n        \"value\": \"<Circular reference to #/components/schemas/CloudErrorBody detected>\"\n      },\n      {\n        \"value\": \"<Circular reference to #/components/schemas/CloudErrorBody detected>\"\n      }\n    ],\n    \"message\": \"string\",\n    \"target\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6d3c09a1-55fe-45dc-aea5-a0572a5d9d19",
+          "name": "Azure DevOps Pipelines_ List by Resource Group",
+          "request": {
+            "name": "Azure DevOps Pipelines_ List by Resource Group",
+            "description": {
+              "content": "Lists all Azure Pipelines under the specified resource group.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "subscriptions",
+                ":subscriptionId",
+                "resourceGroups",
+                ":resourceGroupName",
+                "providers",
+                "Microsoft.DevOps",
+                "pipelines"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "api-version",
+                  "value": "<string>",
+                  "description": "(Required) API version to be used with the HTTP request."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "subscriptionId",
+                  "description": "(Required) Unique identifier of the Azure subscription. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000)."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "resourceGroupName",
+                  "description": "(Required) Name of the resource group within the Azure subscription."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "fa5d0fe6-c3eb-4713-b665-c4a85ef485b6",
+              "name": "The Azure Pipelines have been fetched successfully.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions",
+                    ":subscriptionId",
+                    "resourceGroups",
+                    ":resourceGroupName",
+                    "providers",
+                    "Microsoft.DevOps",
+                    "pipelines"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2019-07-01-preview"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) Unique identifier of the Azure subscription. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000)."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "resourceGroupName",
+                      "description": "(Required) Name of the resource group within the Azure subscription."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"value\": [\n    {\n      \"id\": \"/subscriptions/{subscriptionId}/resourceGroups/myAspNetWebAppPipeline-rg/providers/Microsoft.DevOps/pipelines/myAspNetWebAppPipeline\",\n      \"location\": \"South India\",\n      \"name\": \"myAspNetWebAppPipeline\",\n      \"properties\": {\n        \"bootstrapConfiguration\": {\n          \"template\": {\n            \"id\": \"ms.vss-continuous-delivery-pipeline-templates.aspnet-windowswebapp\",\n            \"parameters\": {\n              \"appInsightLocation\": \"South India\",\n              \"appServicePlan\": \"S1 Standard\",\n              \"location\": \"South India\",\n              \"resourceGroup\": \"myAspNetWebAppPipeline-rg\",\n              \"subscriptionId\": \"{subscriptionId}\",\n              \"webAppName\": \"myAspNetWebApp\"\n            }\n          }\n        },\n        \"organization\": {\n          \"name\": \"myAspNetWebAppPipeline-org\"\n        },\n        \"project\": {\n          \"name\": \"myAspNetWebAppPipeline-project\"\n        }\n      },\n      \"type\": \"Microsoft.DevOps/pipelines\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "82557aa2-d046-4b57-ac71-376073f1412d",
+              "name": "Error response describing why the operation failed.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions",
+                    ":subscriptionId",
+                    "resourceGroups",
+                    ":resourceGroupName",
+                    "providers",
+                    "Microsoft.DevOps",
+                    "pipelines"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2019-07-01-preview"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) Unique identifier of the Azure subscription. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000)."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "resourceGroupName",
+                      "description": "(Required) Name of the resource group within the Azure subscription."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": \"string\",\n    \"details\": [\n      {\n        \"value\": \"<Circular reference to #/components/schemas/CloudErrorBody detected>\"\n      },\n      {\n        \"value\": \"<Circular reference to #/components/schemas/CloudErrorBody detected>\"\n      }\n    ],\n    \"message\": \"string\",\n    \"target\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6df5f2ae-2947-455b-b717-6edc2afec9fe",
+          "name": "Azure DevOps Pipelines_ Delete",
+          "request": {
+            "name": "Azure DevOps Pipelines_ Delete",
+            "description": {
+              "content": "Deletes an Azure Pipeline.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "subscriptions",
+                ":subscriptionId",
+                "resourceGroups",
+                ":resourceGroupName",
+                "providers",
+                "Microsoft.DevOps",
+                "pipelines",
+                ":pipelineName"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "api-version",
+                  "value": "<string>",
+                  "description": "(Required) API version to be used with the HTTP request."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "subscriptionId",
+                  "description": "(Required) Unique identifier of the Azure subscription. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000)."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "resourceGroupName",
+                  "description": "(Required) Name of the resource group within the Azure subscription."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "pipelineName",
+                  "description": "(Required) The name of the Azure Pipeline resource."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "4970c10c-e90a-4e86-98c4-b9f793b77f58",
+              "name": "The Azure Pipeline has been deleted successfully.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions",
+                    ":subscriptionId",
+                    "resourceGroups",
+                    ":resourceGroupName",
+                    "providers",
+                    "Microsoft.DevOps",
+                    "pipelines",
+                    ":pipelineName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2019-07-01-preview"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) Unique identifier of the Azure subscription. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000)."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "resourceGroupName",
+                      "description": "(Required) Name of the resource group within the Azure subscription."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "pipelineName",
+                      "description": "(Required) The name of the Azure Pipeline resource."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "6491bd27-872f-4fbb-aed2-39c7d58a33da",
+              "name": "The Azure Pipeline is not found or has been deleted already.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions",
+                    ":subscriptionId",
+                    "resourceGroups",
+                    ":resourceGroupName",
+                    "providers",
+                    "Microsoft.DevOps",
+                    "pipelines",
+                    ":pipelineName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2019-07-01-preview"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) Unique identifier of the Azure subscription. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000)."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "resourceGroupName",
+                      "description": "(Required) Name of the resource group within the Azure subscription."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "pipelineName",
+                      "description": "(Required) The name of the Azure Pipeline resource."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "4b68d6ab-e370-4f65-b852-2d7c4e4c6202",
+              "name": "Error response describing why the operation failed.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions",
+                    ":subscriptionId",
+                    "resourceGroups",
+                    ":resourceGroupName",
+                    "providers",
+                    "Microsoft.DevOps",
+                    "pipelines",
+                    ":pipelineName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2019-07-01-preview"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) Unique identifier of the Azure subscription. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000)."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "resourceGroupName",
+                      "description": "(Required) Name of the resource group within the Azure subscription."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "pipelineName",
+                      "description": "(Required) The name of the Azure Pipeline resource."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": \"string\",\n    \"details\": [\n      {\n        \"value\": \"<Circular reference to #/components/schemas/CloudErrorBody detected>\"\n      },\n      {\n        \"value\": \"<Circular reference to #/components/schemas/CloudErrorBody detected>\"\n      }\n    ],\n    \"message\": \"string\",\n    \"target\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4bfafde1-d589-47da-ae3d-d6adfb6ce1dc",
+          "name": "Azure DevOps Pipelines_ Get",
+          "request": {
+            "name": "Azure DevOps Pipelines_ Get",
+            "description": {
+              "content": "Gets an existing Azure Pipeline.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "subscriptions",
+                ":subscriptionId",
+                "resourceGroups",
+                ":resourceGroupName",
+                "providers",
+                "Microsoft.DevOps",
+                "pipelines",
+                ":pipelineName"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "api-version",
+                  "value": "<string>",
+                  "description": "(Required) API version to be used with the HTTP request."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "subscriptionId",
+                  "description": "(Required) Unique identifier of the Azure subscription. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000)."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "resourceGroupName",
+                  "description": "(Required) Name of the resource group within the Azure subscription."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "pipelineName",
+                  "description": "(Required) The name of the Azure Pipeline resource in ARM."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "82fc7ffb-c912-4ed2-bb60-bf99585d9dd8",
+              "name": "The Azure Pipeline has been fetched successfully.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions",
+                    ":subscriptionId",
+                    "resourceGroups",
+                    ":resourceGroupName",
+                    "providers",
+                    "Microsoft.DevOps",
+                    "pipelines",
+                    ":pipelineName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2019-07-01-preview"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) Unique identifier of the Azure subscription. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000)."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "resourceGroupName",
+                      "description": "(Required) Name of the resource group within the Azure subscription."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "pipelineName",
+                      "description": "(Required) The name of the Azure Pipeline resource in ARM."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"/subscriptions/{subscriptionId}/resourceGroups/myAspNetWebAppPipeline-rg/providers/Microsoft.DevOps/pipelines/myAspNetWebAppPipeline\",\n  \"location\": \"South India\",\n  \"name\": \"myAspNetWebAppPipeline\",\n  \"properties\": {\n    \"bootstrapConfiguration\": {\n      \"template\": {\n        \"id\": \"ms.vss-continuous-delivery-pipeline-templates.aspnet-windowswebapp\",\n        \"parameters\": {\n          \"appInsightLocation\": \"South India\",\n          \"appServicePlan\": \"S1 Standard\",\n          \"location\": \"South India\",\n          \"resourceGroup\": \"myAspNetWebAppPipeline-rg\",\n          \"subscriptionId\": \"{subscriptionId}\",\n          \"webAppName\": \"myAspNetWebApp\"\n        }\n      }\n    },\n    \"organization\": {\n      \"name\": \"myAspNetWebAppPipeline-org\"\n    },\n    \"project\": {\n      \"name\": \"myAspNetWebAppPipeline-project\"\n    }\n  },\n  \"tags\": {\n    \"tagKey\": \"tagvalue\"\n  },\n  \"type\": \"Microsoft.DevOps/pipelines\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "cff214fa-d280-4c6b-9d6d-9a768acaa407",
+              "name": "Error response describing why the operation failed.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions",
+                    ":subscriptionId",
+                    "resourceGroups",
+                    ":resourceGroupName",
+                    "providers",
+                    "Microsoft.DevOps",
+                    "pipelines",
+                    ":pipelineName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2019-07-01-preview"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) Unique identifier of the Azure subscription. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000)."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "resourceGroupName",
+                      "description": "(Required) Name of the resource group within the Azure subscription."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "pipelineName",
+                      "description": "(Required) The name of the Azure Pipeline resource in ARM."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": \"string\",\n    \"details\": [\n      {\n        \"value\": \"<Circular reference to #/components/schemas/CloudErrorBody detected>\"\n      },\n      {\n        \"value\": \"<Circular reference to #/components/schemas/CloudErrorBody detected>\"\n      }\n    ],\n    \"message\": \"string\",\n    \"target\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "eed211c0-f090-497a-8728-089da55b437a",
+          "name": "Azure DevOps Pipelines_ Update",
+          "request": {
+            "name": "Azure DevOps Pipelines_ Update",
+            "description": {
+              "content": "Updates the properties of an Azure Pipeline. Currently, only tags can be updated.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "subscriptions",
+                ":subscriptionId",
+                "resourceGroups",
+                ":resourceGroupName",
+                "providers",
+                "Microsoft.DevOps",
+                "pipelines",
+                ":pipelineName"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "api-version",
+                  "value": "<string>",
+                  "description": "(Required) API version to be used with the HTTP request."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "subscriptionId",
+                  "description": "(Required) Unique identifier of the Azure subscription. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000)."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "resourceGroupName",
+                  "description": "(Required) Name of the resource group within the Azure subscription."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "pipelineName",
+                  "description": "(Required) The name of the Azure Pipeline resource."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"tags\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "5b91fbea-9264-4eed-994c-4f9ed5342f91",
+              "name": "The Azure Pipeline has been updated successfully.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions",
+                    ":subscriptionId",
+                    "resourceGroups",
+                    ":resourceGroupName",
+                    "providers",
+                    "Microsoft.DevOps",
+                    "pipelines",
+                    ":pipelineName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2019-07-01-preview"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) Unique identifier of the Azure subscription. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000)."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "resourceGroupName",
+                      "description": "(Required) Name of the resource group within the Azure subscription."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "pipelineName",
+                      "description": "(Required) The name of the Azure Pipeline resource."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"tags\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\",\n    \"key_2\": \"<string>\",\n    \"key_3\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"/subscriptions/{subscriptionId}/resourceGroups/myAspNetWebAppPipeline-rg/providers/Microsoft.DevOps/pipelines/myAspNetWebAppPipeline\",\n  \"location\": \"South India\",\n  \"name\": \"myAspNetWebAppPipeline\",\n  \"properties\": {\n    \"bootstrapConfiguration\": {\n      \"template\": {\n        \"id\": \"ms.vss-continuous-delivery-pipeline-templates.aspnet-windowswebapp\",\n        \"parameters\": {\n          \"appInsightLocation\": \"South India\",\n          \"appServicePlan\": \"S1 Standard\",\n          \"location\": \"South India\",\n          \"resourceGroup\": \"myAspNetWebAppPipeline-rg\",\n          \"subscriptionId\": \"{subscriptionId}\",\n          \"webAppName\": \"myAspNetWebApp\"\n        }\n      }\n    },\n    \"organization\": {\n      \"name\": \"myAspNetWebAppPipeline-org\"\n    },\n    \"project\": {\n      \"name\": \"myAspNetWebAppPipeline-project\"\n    }\n  },\n  \"tags\": {\n    \"tagKey\": \"tagvalue\"\n  },\n  \"type\": \"Microsoft.DevOps/pipelines\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "24843bcb-9e74-4ed6-84d9-7dd965110da8",
+              "name": "Error response describing why the operation failed.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions",
+                    ":subscriptionId",
+                    "resourceGroups",
+                    ":resourceGroupName",
+                    "providers",
+                    "Microsoft.DevOps",
+                    "pipelines",
+                    ":pipelineName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2019-07-01-preview"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) Unique identifier of the Azure subscription. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000)."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "resourceGroupName",
+                      "description": "(Required) Name of the resource group within the Azure subscription."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "pipelineName",
+                      "description": "(Required) The name of the Azure Pipeline resource."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"tags\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\",\n    \"key_2\": \"<string>\",\n    \"key_3\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": \"string\",\n    \"details\": [\n      {\n        \"value\": \"<Circular reference to #/components/schemas/CloudErrorBody detected>\"\n      },\n      {\n        \"value\": \"<Circular reference to #/components/schemas/CloudErrorBody detected>\"\n      }\n    ],\n    \"message\": \"string\",\n    \"target\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e1982537-8b85-4002-9af1-8c2869353d1c",
+          "name": "Azure DevOps Pipelines_ Create or Update",
+          "request": {
+            "name": "Azure DevOps Pipelines_ Create or Update",
+            "description": {
+              "content": "Creates or updates an Azure Pipeline.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "subscriptions",
+                ":subscriptionId",
+                "resourceGroups",
+                ":resourceGroupName",
+                "providers",
+                "Microsoft.DevOps",
+                "pipelines",
+                ":pipelineName"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "api-version",
+                  "value": "<string>",
+                  "description": "(Required) API version to be used with the HTTP request."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "subscriptionId",
+                  "description": "(Required) Unique identifier of the Azure subscription. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000)."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "resourceGroupName",
+                  "description": "(Required) Name of the resource group within the Azure subscription."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "pipelineName",
+                  "description": "(Required) The name of the Azure Pipeline resource in ARM."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"properties\": {\n    \"organization\": {\n      \"name\": \"<string>\"\n    },\n    \"project\": {\n      \"name\": \"<string>\"\n    },\n    \"bootstrapConfiguration\": {\n      \"template\": {\n        \"id\": \"<string>\",\n        \"parameters\": {\n          \"key_0\": \"<string>\",\n          \"key_1\": \"<string>\"\n        }\n      },\n      \"repository\": {\n        \"repositoryType\": \"<string>\",\n        \"id\": \"<string>\",\n        \"defaultBranch\": \"<string>\",\n        \"authorization\": {\n          \"authorizationType\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"parameters\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"properties\": {\n          \"key_0\": \"<string>\",\n          \"key_1\": \"<string>\",\n          \"key_2\": \"<string>\"\n        }\n      }\n    }\n  },\n  \"location\": \"<string>\",\n  \"tags\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "3249ef84-fd99-469b-a0c3-60f797fb7cca",
+              "name": "The Azure Pipeline has been configured successfully.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions",
+                    ":subscriptionId",
+                    "resourceGroups",
+                    ":resourceGroupName",
+                    "providers",
+                    "Microsoft.DevOps",
+                    "pipelines",
+                    ":pipelineName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2019-07-01-preview"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) Unique identifier of the Azure subscription. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000)."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "resourceGroupName",
+                      "description": "(Required) Name of the resource group within the Azure subscription."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "pipelineName",
+                      "description": "(Required) The name of the Azure Pipeline resource in ARM."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"properties\": {\n    \"organization\": {\n      \"name\": \"<string>\"\n    },\n    \"project\": {\n      \"name\": \"<string>\"\n    },\n    \"bootstrapConfiguration\": {\n      \"template\": {\n        \"id\": \"<string>\",\n        \"parameters\": {\n          \"key_0\": \"<string>\",\n          \"key_1\": \"<string>\"\n        }\n      },\n      \"repository\": {\n        \"repositoryType\": \"<string>\",\n        \"id\": \"<string>\",\n        \"defaultBranch\": \"<string>\",\n        \"authorization\": {\n          \"authorizationType\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"parameters\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"properties\": {\n          \"key_0\": \"<string>\"\n        }\n      }\n    }\n  },\n  \"location\": \"<string>\",\n  \"tags\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"/subscriptions/{subscriptionId}/resourceGroups/myAspNetWebAppPipeline-rg/providers/Microsoft.DevOps/pipelines/myAspNetWebAppPipeline\",\n  \"location\": \"South India\",\n  \"name\": \"myAspNetWebAppPipeline\",\n  \"properties\": {\n    \"bootstrapConfiguration\": {\n      \"template\": {\n        \"id\": \"ms.vss-continuous-delivery-pipeline-templates.aspnet-windowswebapp\",\n        \"parameters\": {\n          \"appInsightLocation\": \"South India\",\n          \"appServicePlan\": \"S1 Standard\",\n          \"location\": \"South India\",\n          \"resourceGroup\": \"myAspNetWebAppPipeline-rg\",\n          \"subscriptionId\": \"{subscriptionId}\",\n          \"webAppName\": \"myAspNetWebApp\"\n        }\n      }\n    },\n    \"organization\": {\n      \"name\": \"myAspNetWebAppPipeline-org\"\n    },\n    \"project\": {\n      \"name\": \"myAspNetWebAppPipeline-project\"\n    }\n  },\n  \"type\": \"Microsoft.DevOps/pipelines\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "5afb873a-bf88-492b-965d-3631ff54af1e",
+              "name": "The request has been accepted for processing and the Azure Pipeline will be configured asynchronously.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions",
+                    ":subscriptionId",
+                    "resourceGroups",
+                    ":resourceGroupName",
+                    "providers",
+                    "Microsoft.DevOps",
+                    "pipelines",
+                    ":pipelineName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2019-07-01-preview"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) Unique identifier of the Azure subscription. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000)."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "resourceGroupName",
+                      "description": "(Required) Name of the resource group within the Azure subscription."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "pipelineName",
+                      "description": "(Required) The name of the Azure Pipeline resource in ARM."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"properties\": {\n    \"organization\": {\n      \"name\": \"<string>\"\n    },\n    \"project\": {\n      \"name\": \"<string>\"\n    },\n    \"bootstrapConfiguration\": {\n      \"template\": {\n        \"id\": \"<string>\",\n        \"parameters\": {\n          \"key_0\": \"<string>\",\n          \"key_1\": \"<string>\"\n        }\n      },\n      \"repository\": {\n        \"repositoryType\": \"<string>\",\n        \"id\": \"<string>\",\n        \"defaultBranch\": \"<string>\",\n        \"authorization\": {\n          \"authorizationType\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"parameters\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"properties\": {\n          \"key_0\": \"<string>\"\n        }\n      }\n    }\n  },\n  \"location\": \"<string>\",\n  \"tags\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Accepted",
+              "code": 202,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "b5f5dbb5-bef6-4ba9-9b0a-f31972192b70",
+              "name": "Error response describing why the operation failed.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions",
+                    ":subscriptionId",
+                    "resourceGroups",
+                    ":resourceGroupName",
+                    "providers",
+                    "Microsoft.DevOps",
+                    "pipelines",
+                    ":pipelineName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2019-07-01-preview"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) Unique identifier of the Azure subscription. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000)."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "resourceGroupName",
+                      "description": "(Required) Name of the resource group within the Azure subscription."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "pipelineName",
+                      "description": "(Required) The name of the Azure Pipeline resource in ARM."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"properties\": {\n    \"organization\": {\n      \"name\": \"<string>\"\n    },\n    \"project\": {\n      \"name\": \"<string>\"\n    },\n    \"bootstrapConfiguration\": {\n      \"template\": {\n        \"id\": \"<string>\",\n        \"parameters\": {\n          \"key_0\": \"<string>\",\n          \"key_1\": \"<string>\"\n        }\n      },\n      \"repository\": {\n        \"repositoryType\": \"<string>\",\n        \"id\": \"<string>\",\n        \"defaultBranch\": \"<string>\",\n        \"authorization\": {\n          \"authorizationType\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"parameters\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"properties\": {\n          \"key_0\": \"<string>\"\n        }\n      }\n    }\n  },\n  \"location\": \"<string>\",\n  \"tags\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": \"string\",\n    \"details\": [\n      {\n        \"value\": \"<Circular reference to #/components/schemas/CloudErrorBody detected>\"\n      },\n      {\n        \"value\": \"<Circular reference to #/components/schemas/CloudErrorBody detected>\"\n      }\n    ],\n    \"message\": \"string\",\n    \"target\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://management.azure.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "user_impersonation"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://login.microsoftonline.com/common/oauth2/authorize"
+      },
+      {
+        "key": "grant_type",
+        "value": "implicit"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "84fe0ac5-88b7-4539-a741-d419a6f0842e",
+    "name": "Azure DevOps Operations Pipelines API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Azure DevOps Resource Provider",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,193 @@
+{
+  "item": [
+    {
+      "id": "7ba0ed90-79c8-4cdb-b08a-9617ffc58d48",
+      "name": "PipelineTemplateDefinitions",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "a3ab6f9a-efdd-4c5b-84b1-e3ab8f9c16bc",
+          "name": "Azure DevOps Pipeline Template Definitions_ List",
+          "request": {
+            "name": "Azure DevOps Pipeline Template Definitions_ List",
+            "description": {
+              "content": "Lists all pipeline templates which can be used to configure an Azure Pipeline.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "providers",
+                "Microsoft.DevOps",
+                "pipelineTemplateDefinitions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "api-version",
+                  "value": "<string>",
+                  "description": "(Required) API version to be used with the HTTP request."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "4257cd6e-eb0b-4c1f-830d-e2972c2822ff",
+              "name": "The pipeline template definitions have been fetched successfully.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "providers",
+                    "Microsoft.DevOps",
+                    "pipelineTemplateDefinitions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2019-07-01-preview"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"value\": [\n    {\n      \"description\": \"Template for configuring CI/CD pipeline for ASP.Net app on Azure windows app service\",\n      \"id\": \"ms.vss-continuous-delivery-pipeline-templates.aspnet-windowswebapp\",\n      \"inputs\": [\n        {\n          \"description\": \"Authorization for Azure ARM endpoints.\",\n          \"id\": \"azureAuth\",\n          \"possibleValues\": [],\n          \"type\": \"String\"\n        },\n        {\n          \"description\": \"Id of subscription where azure resources will be created.\",\n          \"id\": \"subscriptionId\",\n          \"possibleValues\": [],\n          \"type\": \"String\"\n        },\n        {\n          \"description\": \"A resource group is a collection of resources that share the same lifecycle, permissions, and policies. Name of resource group which should contain web app.\",\n          \"id\": \"resourceGroup\",\n          \"possibleValues\": [],\n          \"type\": \"String\"\n        },\n        {\n          \"description\": \"Name of web app to be created\",\n          \"id\": \"webAppName\",\n          \"possibleValues\": [],\n          \"type\": \"String\"\n        },\n        {\n          \"description\": \"Choose the Azure region that's right for you and your customers.\",\n          \"id\": \"location\",\n          \"possibleValues\": [],\n          \"type\": \"String\"\n        },\n        {\n          \"description\": \"Details of cost and compute resource associated with the web app\",\n          \"id\": \"appServicePlan\",\n          \"possibleValues\": [\n            {\n              \"displayValue\": \"P1 Premium (1 Core, 1.75 GB RAM)\",\n              \"value\": \"P1 Premium\"\n            },\n            {\n              \"displayValue\": \"P2 Premium (2 Core, 3.5 GB RAM)\",\n              \"value\": \"P2 Premium\"\n            },\n            {\n              \"displayValue\": \"P3 Premium (4 Core, 7 GB RAM)\",\n              \"value\": \"P3 Premium\"\n            },\n            {\n              \"displayValue\": \"S1 Standard (1 Core, 1.75 GB RAM)\",\n              \"value\": \"S1 Standard\"\n            },\n            {\n              \"displayValue\": \"S2 Standard (2 Core, 3.5 GB RAM)\",\n              \"value\": \"S2 Standard\"\n            },\n            {\n              \"displayValue\": \"S3 Standard (4 Core, 7 GB RAM)\",\n              \"value\": \"S3 Standard\"\n            },\n            {\n              \"displayValue\": \"B1 Basic (1 Core, 1.75 GB RAM)\",\n              \"value\": \"B1 Basic\"\n            },\n            {\n              \"displayValue\": \"B2 Basic (2 Core, 3.5 GB RAM)\",\n              \"value\": \"B2 Basic\"\n            },\n            {\n              \"displayValue\": \"B3 Basic (4 Core, 7 GB RAM)\",\n              \"value\": \"B3 Basic\"\n            },\n            {\n              \"displayValue\": \"F1 Free\",\n              \"value\": \"F1 Free\"\n            },\n            {\n              \"displayValue\": \"D1 Shared\",\n              \"value\": \"D1 Shared\"\n            }\n          ],\n          \"type\": \"String\"\n        },\n        {\n          \"description\": \"Collect application monitoring data using Application Insights.\",\n          \"id\": \"appInsightLocation\",\n          \"possibleValues\": [],\n          \"type\": \"String\"\n        }\n      ]\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "977c20df-481b-4c4a-a46a-1192b729a8a3",
+              "name": "Error response describing why the operation failed.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "providers",
+                    "Microsoft.DevOps",
+                    "pipelineTemplateDefinitions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2019-07-01-preview"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": \"string\",\n    \"details\": [\n      {\n        \"value\": \"<Circular reference to #/components/schemas/CloudErrorBody detected>\"\n      },\n      {\n        \"value\": \"<Circular reference to #/components/schemas/CloudErrorBody detected>\"\n      }\n    ],\n    \"message\": \"string\",\n    \"target\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://management.azure.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "user_impersonation"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://login.microsoftonline.com/common/oauth2/authorize"
+      },
+      {
+        "key": "grant_type",
+        "value": "implicit"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "9328b3ce-02d2-4d95-867a-150f952b7834",
+    "name": "Azure DevOps Operations PipelineTemplateDefinitions API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Azure DevOps Resource Provider",
+      "type": "text/plain"
+    }
+  }
+}

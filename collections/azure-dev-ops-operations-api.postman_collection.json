@@ -1,0 +1,193 @@
+{
+  "item": [
+    {
+      "id": "0ae36455-0209-4de2-956d-320dcb0cbebc",
+      "name": "Operations",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "00b536f1-4aa9-4cb2-af53-284e8a27613d",
+          "name": "Azure DevOps Operations_ List",
+          "request": {
+            "name": "Azure DevOps Operations_ List",
+            "description": {
+              "content": "Lists all the operations supported by Microsoft.DevOps resource provider.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "providers",
+                "Microsoft.DevOps",
+                "operations"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "api-version",
+                  "value": "<string>",
+                  "description": "(Required) API version to be used with the HTTP request."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "2ac1330a-82a1-4526-a659-6b8483bc99d7",
+              "name": "The list of supported operations has been fetched successfully.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "providers",
+                    "Microsoft.DevOps",
+                    "operations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2019-07-01-preview"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"value\": [\n    {\n      \"display\": {\n        \"description\": \"Registers the specified subscription with Microsoft.DevOps resource provider and enables the creation of Pipelines\",\n        \"operation\": \"Register for Microsoft.DevOps\",\n        \"provider\": \"Microsoft DevOps\",\n        \"resource\": \"register\"\n      },\n      \"isDataAction\": \"false\",\n      \"name\": \"Microsoft.DevOps/register/action\"\n    },\n    {\n      \"display\": {\n        \"description\": \"Creates or Updates any Pipeline\",\n        \"operation\": \"Create or Update Pipeline\",\n        \"provider\": \"Microsoft DevOps\",\n        \"resource\": \"Pipelines\"\n      },\n      \"isDataAction\": \"false\",\n      \"name\": \"Microsoft.DevOps/pipelines/write\"\n    },\n    {\n      \"display\": {\n        \"description\": \"Reads any Pipeline\",\n        \"operation\": \"Read Pipeline\",\n        \"provider\": \"Microsoft DevOps\",\n        \"resource\": \"Pipelines\"\n      },\n      \"isDataAction\": \"false\",\n      \"name\": \"Microsoft.DevOps/pipelines/read\"\n    },\n    {\n      \"display\": {\n        \"description\": \"Deletes any Pipeline\",\n        \"operation\": \"Delete Pipeline\",\n        \"provider\": \"Microsoft DevOps\",\n        \"resource\": \"Pipelines\"\n      },\n      \"isDataAction\": \"false\",\n      \"name\": \"Microsoft.DevOps/pipelines/delete\"\n    },\n    {\n      \"display\": {\n        \"description\": \"Reads any PipelineTemplateDefinition\",\n        \"operation\": \"Read PipelineTemplateDefinition\",\n        \"provider\": \"Microsoft DevOps\",\n        \"resource\": \"PipelineTemplateDefinitions\"\n      },\n      \"isDataAction\": \"false\",\n      \"name\": \"Microsoft.DevOps/pipelineTemplateDefinitions/read\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "6a080138-56b2-4f93-a49a-971f75c70e3a",
+              "name": "Error response describing why the operation failed.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "providers",
+                    "Microsoft.DevOps",
+                    "operations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2019-07-01-preview"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": \"string\",\n    \"details\": [\n      {\n        \"value\": \"<Circular reference to #/components/schemas/CloudErrorBody detected>\"\n      },\n      {\n        \"value\": \"<Circular reference to #/components/schemas/CloudErrorBody detected>\"\n      }\n    ],\n    \"message\": \"string\",\n    \"target\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://management.azure.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "user_impersonation"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://login.microsoftonline.com/common/oauth2/authorize"
+      },
+      {
+        "key": "grant_type",
+        "value": "implicit"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "74c0b45f-dc41-459c-a90c-6301bf58e6db",
+    "name": "Azure DevOps Operations API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Azure DevOps Resource Provider",
+      "type": "text/plain"
+    }
+  }
+}
