@@ -37,7 +37,8 @@ apis:
   description: The Operations API from Azure DevOps — 1 operation(s) for operations.
   humanURL: https://learn.microsoft.com/en-us/rest/api/azure/devops/
   baseURL: https://dev.azure.com/{organization}
-  tags:
+  tags: []
+  tags_raw:
   - Operations
   properties:
   - type: OpenAPI
