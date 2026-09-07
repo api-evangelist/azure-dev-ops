@@ -1,7 +1,7 @@
-swagger: '2.0'
+openapi: 3.2.0
 info:
   description: Azure DevOps Resource Provider
-  title: Azure DevOps Operations PipelineTemplateDefinitions API
+  title: Azure DevOps Operations Pipeline Template Definitions API
   version: '2.0'
   x-apisguru-categories:
   - cloud
@@ -17,13 +17,8 @@ info:
   x-tags:
   - Azure
   - Microsoft
-host: management.azure.com
-schemes:
-- https
-consumes:
-- application/json
-produces:
-- application/json
+servers:
+- url: https://management.azure.com
 security:
 - azure_auth:
   - user_impersonation
@@ -35,16 +30,20 @@ paths:
       description: Lists all pipeline templates which can be used to configure an Azure Pipeline.
       operationId: PipelineTemplateDefinitions_List
       parameters:
-      - $ref: '#/parameters/ApiVersionParameter'
+      - $ref: '#/components/parameters/ApiVersionParameter'
       responses:
         '200':
           description: The pipeline template definitions have been fetched successfully.
-          schema:
-            $ref: '#/definitions/PipelineTemplateDefinitionListResult'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PipelineTemplateDefinitionListResult'
         default:
           description: Error response describing why the operation failed.
-          schema:
-            $ref: '#/definitions/CloudError'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CloudError'
       tags:
       - PipelineTemplateDefinitions
       x-ms-examples:
@@ -115,113 +114,116 @@ paths:
       x-microcks-operation:
         delay: 0
         dispatcher: FALLBACK
-definitions:
-  PipelineTemplateDefinitionListResult:
-    description: Result of a request to list all pipeline template definitions.
-    properties:
-      nextLink:
-        description: The URL to get the next set of pipeline template definitions, if there are any.
+components:
+  schemas:
+    PipelineTemplateDefinition:
+      description: Definition of a pipeline template.
+      properties:
+        description:
+          description: Description of the pipeline enabled by the template.
+          type: string
+        id:
+          description: Unique identifier of the pipeline template.
+          type: string
+        inputs:
+          description: List of input parameters required by the template to create a pipeline.
+          items:
+            $ref: '#/components/schemas/InputDescriptor'
+          type: array
+      required:
+      - id
+      type: object
+    CloudError:
+      description: An error response from the Pipelines Resource Provider.
+      properties:
+        error:
+          $ref: '#/components/schemas/CloudErrorBody'
+          description: Details of the error from the Pipelines Resource Provider.
+      x-ms-external: true
+    InputValue:
+      description: Representation of a pipeline template input parameter value.
+      properties:
+        displayValue:
+          description: Description of the input parameter value.
+          type: string
+        value:
+          description: Value of an input parameter.
+          type: string
+      type: object
+    CloudErrorBody:
+      description: An error response from the Pipelines Resource Provider.
+      properties:
+        code:
+          description: An identifier for the error. Codes are invariant and are intended to be consumed programmatically.
+          type: string
+        details:
+          description: A list of additional details about the error.
+          items:
+            $ref: '#/components/schemas/CloudErrorBody'
+          type: array
+        message:
+          description: A message describing the error, intended to be suitable for display in a user interface.
+          type: string
+        target:
+          description: The target of the particular error. For example, the name of the property in error or the method where the error occurred.
+          type: string
+      x-ms-external: true
+    InputDescriptor:
+      description: Representation of a pipeline template input parameter.
+      properties:
+        description:
+          description: Description of the input parameter.
+          type: string
+        id:
+          description: Identifier of the input parameter.
+          type: string
+        possibleValues:
+          description: List of possible values for the input parameter.
+          items:
+            $ref: '#/components/schemas/InputValue'
+          type: array
+        type:
+          description: Data type of the value of the input parameter.
+          enum:
+          - String
+          - SecureString
+          - Int
+          - Bool
+          - Authorization
+          type: string
+          x-ms-enum:
+            modelAsString: true
+            name: InputDataType
+      required:
+      - id
+      - type
+      type: object
+    PipelineTemplateDefinitionListResult:
+      description: Result of a request to list all pipeline template definitions.
+      properties:
+        nextLink:
+          description: The URL to get the next set of pipeline template definitions, if there are any.
+          type: string
+        value:
+          description: List of pipeline template definitions.
+          items:
+            $ref: '#/components/schemas/PipelineTemplateDefinition'
+          type: array
+      type: object
+  parameters:
+    ApiVersionParameter:
+      description: API version to be used with the HTTP request.
+      in: query
+      name: api-version
+      required: true
+      schema:
         type: string
-      value:
-        description: List of pipeline template definitions.
-        items:
-          $ref: '#/definitions/PipelineTemplateDefinition'
-        type: array
-    type: object
-  PipelineTemplateDefinition:
-    description: Definition of a pipeline template.
-    properties:
-      description:
-        description: Description of the pipeline enabled by the template.
-        type: string
-      id:
-        description: Unique identifier of the pipeline template.
-        type: string
-      inputs:
-        description: List of input parameters required by the template to create a pipeline.
-        items:
-          $ref: '#/definitions/InputDescriptor'
-        type: array
-    required:
-    - id
-    type: object
-  InputValue:
-    description: Representation of a pipeline template input parameter value.
-    properties:
-      displayValue:
-        description: Description of the input parameter value.
-        type: string
-      value:
-        description: Value of an input parameter.
-        type: string
-    type: object
-  CloudError:
-    description: An error response from the Pipelines Resource Provider.
-    properties:
-      error:
-        $ref: '#/definitions/CloudErrorBody'
-        description: Details of the error from the Pipelines Resource Provider.
-    x-ms-external: true
-  CloudErrorBody:
-    description: An error response from the Pipelines Resource Provider.
-    properties:
-      code:
-        description: An identifier for the error. Codes are invariant and are intended to be consumed programmatically.
-        type: string
-      details:
-        description: A list of additional details about the error.
-        items:
-          $ref: '#/definitions/CloudErrorBody'
-        type: array
-      message:
-        description: A message describing the error, intended to be suitable for display in a user interface.
-        type: string
-      target:
-        description: The target of the particular error. For example, the name of the property in error or the method where the error occurred.
-        type: string
-    x-ms-external: true
-  InputDescriptor:
-    description: Representation of a pipeline template input parameter.
-    properties:
-      description:
-        description: Description of the input parameter.
-        type: string
-      id:
-        description: Identifier of the input parameter.
-        type: string
-      possibleValues:
-        description: List of possible values for the input parameter.
-        items:
-          $ref: '#/definitions/InputValue'
-        type: array
-      type:
-        description: Data type of the value of the input parameter.
-        enum:
-        - String
-        - SecureString
-        - Int
-        - Bool
-        - Authorization
-        type: string
-        x-ms-enum:
-          modelAsString: true
-          name: InputDataType
-    required:
-    - id
-    - type
-    type: object
-parameters:
-  ApiVersionParameter:
-    description: API version to be used with the HTTP request.
-    in: query
-    name: api-version
-    required: true
-    type: string
-securityDefinitions:
-  azure_auth:
-    authorizationUrl: https://login.microsoftonline.com/common/oauth2/authorize
-    description: Azure Active Directory OAuth2 Flow
-    flow: implicit
-    scopes:
-      user_impersonation: impersonate your user account
-    type: oauth2
+  securitySchemes:
+    azure_auth:
+      type: oauth2
+      flows:
+        implicit:
+          scopes:
+            user_impersonation: impersonate your user account
+          authorizationUrl: https://login.microsoftonline.com/common/oauth2/authorize
+      description: Azure Active Directory OAuth2 Flow
